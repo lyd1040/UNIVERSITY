@@ -1,6 +1,6 @@
 /********************** PC **********************/
 .header{
-    border: 1px solid;
+
     width: 100%;
     height: 70px;
 }
@@ -24,11 +24,13 @@
 
     display: flex;
     gap: 5px;
+
+    padding-left: 10px;
 }
 /* 로고 이미지 */
 .header .header_contents_wrap .header_contents_left .logo_wrap .logo_img_box{
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
 }
 .header .header_contents_wrap .header_contents_left .logo_wrap .logo_img_box h1{
     width: 100%;
@@ -142,6 +144,11 @@
     height: 152px;
 
     background: #d6d6d6;
+
+    display: none;
+}
+.header .header_contents_wrap .header_contents_right.active .gnb_container_wrap .gnb_container .gnb .gnb_bg{
+    display: block;
 }
 
 /* GNB 메뉴 */
@@ -182,9 +189,12 @@
 
     font-size: 0.75em;
 
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
+}
+.header .header_contents_wrap .header_contents_right.active .gnb_container_wrap .gnb_container .gnb .menu_wrap>li>ul{
+    display: flex;
 }
 .header .header_contents_wrap .header_contents_right .gnb_container_wrap .gnb_container .gnb .menu_wrap>li>ul::before{
     position: absolute;
@@ -205,11 +215,18 @@
     border: 0;
 }
 .header .header_contents_wrap .header_contents_right .gnb_container_wrap .gnb_container .gnb .menu_wrap>li>ul li{
-    margin: 5px 0;
+    padding: 5px 0;
 
     font-weight: 400;
 }
+.header .header_contents_wrap .header_contents_right.active .gnb_container_wrap .gnb_container .gnb .menu_wrap>li>ul li{
+    width: 100%;
 
+    text-align: center;
+}
+.header .header_contents_wrap .header_contents_right.active .gnb_container_wrap .gnb_container .gnb .menu_wrap>li>ul li:hover{
+    background: #fff;
+}
 
 /* gnb_menu_bar_btn */
 .header .header_contents_wrap .header_contents_right .gnb_container_wrap .show_hide_gnb_btn_wrap{
