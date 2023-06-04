@@ -33,16 +33,22 @@ function show_hide_header(){
         
 
         if(gnb_show_hide_btn.classList.contains('active')){
+            school_kr_name.classList.add('active');
+ /*            
             school_kr_name.style.fontSize='2em';
             school_kr_name.style.transform='translateY(10px)';
             school_kr_name.children[0].animate({color:'#fff'},300);
             setTimeout(()=>{school_kr_name.children[0].style.color='#fff'},300);
+ */
             gnb_container.classList.add('active');
             gnb_show_hide_btn.innerHTML='<i class="fa-solid fa-x"></i>';
         }else{
+            school_kr_name.classList.remove('active');
+/*             
             school_kr_name.style.fontSize='1.2em';
             school_kr_name.style.transform='translateY(0px)';
             school_kr_name.children[0].style.color='#000'
+ */
             gnb_container.classList.remove('active');
             gnb_show_hide_btn.innerHTML='<i class="fa-solid fa-bars"></i>';
         }
