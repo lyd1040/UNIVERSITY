@@ -12,6 +12,13 @@ function show_hide_header(){
         e.addEventListener('mouseout',()=>{
             document.querySelector('.header_contents_right').classList.remove('active');
         })
+
+        e.children[0].addEventListener('click',()=>{
+            for(let x=0; x<gnb_contents_name.length; x++){
+                gnb_contents_name[x].children[0].classList.remove('click_active');
+            }
+            e.children[0].classList.add('click_active');
+        })
     })
 
     console.log(gnb_contents_name);

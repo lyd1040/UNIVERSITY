@@ -1,8 +1,11 @@
 /********************** PC **********************/
 .header{
+    position: fixed;
 
     width: 100%;
     height: 70px;
+
+    z-index: 999;
 }
 
 .header .header_contents_wrap{
@@ -120,12 +123,18 @@
     align-items: center;
     gap: 20px;
 
-    padding-right: 30px;
+    padding-right: 20px;
 
     font-size: 0.9em;
 
     display: flex;
     justify-content: end;
+}
+.header .header_contents_wrap .header_contents_right .gnb_container_wrap .gnb_container .school_other_container_wrap .school_login_container{
+    display: flex;
+    gap: 20px;
+
+    padding-right: 30px;
 }
 
 /*** GNB ***/
@@ -154,7 +163,6 @@
 /* GNB 메뉴 */
 .header .header_contents_wrap .header_contents_right .gnb_container_wrap .gnb_container .gnb .menu_wrap{
     width: 100%;
-    
     height: 50px;
 
     display: flex;
@@ -247,3 +255,114 @@
     border: 1px solid;
 }
 /********************** MOBILE **********************/
+@media screen and (max-width:1110px) {
+    .header .header_contents_wrap .header_contents_right.active .gnb_container_wrap .gnb_container .gnb .gnb_bg{
+        width: 0;
+        height: 0;
+        background: none;
+    }
+    .header .header_contents_wrap .header_contents_right .gnb_container_wrap .gnb_container{
+        position: absolute;
+        left: 0;
+
+        width: 100%;
+        height: 100vh;
+
+        backdrop-filter: blur(3px);
+        background: #0061c5c4;
+    }
+
+    /* 다른 사이트 컨텐츠 (아래쪽) */
+    .header .header_contents_wrap .header_contents_right .gnb_container_wrap .gnb_container .school_other_container_wrap{
+        position: absolute;
+        bottom: 0;
+
+        width: 100%;
+        height: 50%;
+
+        border: 1px solid #fff;
+    }
+
+    /* GNB (위쪽) */
+    .header .header_contents_wrap .header_contents_right .gnb_container_wrap .gnb_container .gnb{
+        position: absolute;
+        top: 0;
+
+
+        width: 100%;
+        height: 50%;
+        
+        border: 1px solid;
+    }
+
+    .header .header_contents_wrap .header_contents_right .gnb_container_wrap .gnb_container .gnb .menu_wrap{
+        position: absolute;
+        left: 0;
+        width: 50%;
+        height: 100%;
+
+        border: 1px solid red;
+
+        display: flex;
+        justify-content: center;
+        align-items: start;
+        flex-direction: column;
+        
+    }
+    /* GNB 메뉴 이름 */
+    .header .header_contents_wrap .header_contents_right .gnb_container_wrap .gnb_container .gnb .menu_wrap .gnb_contents_name{
+        position: static;
+
+        width: 50%;
+
+        margin: 0 auto;
+        padding: 10px 0;
+    }
+
+    /* GNB 하위 메뉴 */
+
+    .header .header_contents_wrap .header_contents_right .gnb_container_wrap .gnb_container .gnb .menu_wrap .gnb_contents_name h2{
+        font-size: 1.8em;
+        transition: 0.3s;
+    }
+    
+    .header .header_contents_wrap .header_contents_right .gnb_container_wrap .gnb_container .gnb .menu_wrap .gnb_contents_name h2.click_active{
+        transform: translateX(50px);
+    }
+    .header .header_contents_wrap .header_contents_right .gnb_container_wrap .gnb_container .gnb .menu_wrap .gnb_contents_name .gnb_detail_menu_wrap{
+        position: absolute;
+        top: 0;
+        left: 100%;
+
+        height: 100%;
+
+        padding: 0;
+        border: 1px solid;
+
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+
+        font-size: 1.4em;
+
+        display: none;
+
+        transition: 0.5s;
+    }
+
+    .header .header_contents_wrap .header_contents_right.active .gnb_container_wrap .gnb_container .gnb .menu_wrap .gnb_contents_name .gnb_detail_menu_wrap{
+        display: none;
+    }
+    .header .header_contents_wrap .header_contents_right .gnb_container_wrap .gnb_container .gnb .menu_wrap .gnb_contents_name h2.click_active + .gnb_detail_menu_wrap{
+        text-align: center;
+        display: flex;
+        gap: 30px;
+    }
+    .header .header_contents_wrap .header_contents_right .gnb_container_wrap .gnb_container .gnb .menu_wrap .gnb_contents_name h2.click_active + .gnb_detail_menu_wrap li{
+        background: none;
+    }
+
+    .header .header_contents_wrap .header_contents_right .gnb_container_wrap .gnb_container .gnb .menu_wrap>li>ul::before{
+        border: 0;
+    }
+}
