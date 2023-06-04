@@ -4,6 +4,7 @@
     top: 0;
 
     width: 100%;
+    min-width: 600px;
     height: 70px;
 
     z-index: 50;
@@ -29,8 +30,6 @@
 
     display: flex;
     align-items: center;
-
-    z-index: 999;
 }
 /* 로고쪽 */
 .header .header_contents_wrap .header_contents_left .logo_wrap{
@@ -43,8 +42,16 @@
 }
 /* 로고 이미지 */
 .header .header_contents_wrap .header_contents_left .logo_wrap .logo_img_box{
+    position: relative;
+
     width: 60px;
     height: 60px;
+
+    border-radius: 50%;
+
+    background: #fff;
+
+    z-index: 1;
 }
 .header .header_contents_wrap .header_contents_left .logo_wrap .logo_img_box h1{
     width: 100%;
@@ -69,11 +76,16 @@
 
 /* 로고 텍스트(우석대학교) */
 .header .header_contents_wrap .header_contents_left .logo_wrap .logo_text_box .school_kr_name_wrap .school_kr_name{
+    position: relative;
 
     font-size: 1.2em;
     font-weight: 700;
 
     letter-spacing: -1px;
+
+    transition: 0.3s;
+
+    z-index: 1;
 }
 .header .header_contents_wrap .header_contents_left .logo_wrap .logo_text_box .school_kr_name_wrap .school_kr_name a{
     color: #000;
@@ -259,14 +271,17 @@
 .header .header_contents_wrap .header_contents_right .gnb_container_wrap .show_hide_gnb_btn_wrap a{
     padding: 7px 10px;
 
-    font-size: 1.2em;
+    font-size: 2em;
 
     background: none;
 
     border: 1px solid;
+
+    color: #000;
 }
 /********************** MOBILE **********************/
 @media screen and (max-width:1110px) {
+
     .header .header_contents_wrap .header_contents_right.active .gnb_container_wrap .gnb_container .gnb .gnb_bg{
         width: 0;
         height: 0;
@@ -276,17 +291,28 @@
     /* 헤더 왼쪽 */
     .header .header_contents_wrap .header_contents_left{
         position: absolute;
-        width: 100%;
+        top: 0;
+        left: 0;
     }
     .header .header_contents_wrap .header_contents_right .gnb_container_wrap .gnb_container{
         position: absolute;
         left: 0;
 
+        transform: translateX(100%);
+
         width: 100%;
         height: 100vh;
 
         backdrop-filter: blur(3px);
-        background: #0061c5c4;
+        background: #0063c5e7;
+
+        opacity: 0;
+
+        transition: 0.3s;
+    }
+    .header .header_contents_wrap .header_contents_right .gnb_container_wrap .gnb_container.active{
+        opacity: 1;
+        transform: translateX(0);
     }
 
     /* 다른 사이트 컨텐츠 (아래쪽) */
@@ -297,7 +323,7 @@
         width: 100%;
         height: 50%;
 
-        border-top: 1px solid #fff;
+        border-top: 5px solid #ffffff;
     }
 
     .header .header_contents_wrap .header_contents_right .gnb_container_wrap .gnb_container .school_other_container_wrap .school_other_container{
@@ -311,9 +337,10 @@
         height: 80%;
 
         padding: 0;
+        padding-top: 40px;
 
         display: flex;
-        justify-content: center;
+        justify-content: start;
         flex-direction: column;
 
         font-size: 1.3em;
@@ -330,10 +357,11 @@
         height: 80%;
 
         padding: 0;
-        border-right: 1px solid #d3d3d34f;
+        padding-top: 40px;
+        border-right: 2px solid #d3d3d34f;
 
         display: flex;
-        justify-content: center;
+        justify-content: start;
         align-items: center;
         flex-direction: column;
 
@@ -377,10 +405,19 @@
     .header .header_contents_wrap .header_contents_right .gnb_container_wrap .gnb_container .gnb .menu_wrap .gnb_contents_name h2{
         font-size: 1.8em;
         transition: 0.3s;
+
+        letter-spacing: -1px;
     }
     
     .header .header_contents_wrap .header_contents_right .gnb_container_wrap .gnb_container .gnb .menu_wrap .gnb_contents_name h2.click_active{
-        transform: translateX(50px);
+        transform: translateX(100px);
+    }
+
+    .header .header_contents_wrap .header_contents_right .gnb_container_wrap .gnb_container .gnb .menu_wrap .gnb_contents_name h2 a{
+        color: #ffffff80;
+    }
+    .header .header_contents_wrap .header_contents_right .gnb_container_wrap .gnb_container .gnb .menu_wrap .gnb_contents_name h2.click_active a{
+        color: #fff;
     }
     .header .header_contents_wrap .header_contents_right .gnb_container_wrap .gnb_container .gnb .menu_wrap .gnb_contents_name .gnb_detail_menu_wrap{
         position: absolute;
@@ -400,6 +437,8 @@
         display: none;
 
         transition: 0.5s;
+
+        letter-spacing: -2px;
     }
 
     .header .header_contents_wrap .header_contents_right.active .gnb_container_wrap .gnb_container .gnb .menu_wrap .gnb_contents_name .gnb_detail_menu_wrap{
@@ -416,5 +455,28 @@
 
     .header .header_contents_wrap .header_contents_right .gnb_container_wrap .gnb_container .gnb .menu_wrap>li>ul::before{
         border: 0;
+    }
+
+    .header .header_contents_wrap .header_contents_right .gnb_container_wrap .show_hide_gnb_btn_wrap{
+        position: absolute;
+        top: 50%;
+        right: 30px;
+
+        transform: translateY(-50%);
+        
+        display: flex;
+
+        border: 0;
+    }
+
+    .header .header_contents_wrap .header_contents_right .gnb_container_wrap .show_hide_gnb_btn_wrap .show_hide_gnb_btn{
+        border: 0;
+
+        color: #000;
+        
+        transition: 0.2s;
+    }
+    .header .header_contents_wrap .header_contents_right .gnb_container_wrap .show_hide_gnb_btn_wrap .show_hide_gnb_btn.active{
+        color: #fff;
     }
 }
