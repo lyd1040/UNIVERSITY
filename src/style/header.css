@@ -1,13 +1,13 @@
 /********************** PC **********************/
 .header{
-    position: fixed;
-    top: 0;
 
     width: 100%;
     min-width: 630px;
     height: 70px;
 
     z-index: 50;
+
+    background: #fff;
 }
 
 .header .header_contents_wrap{
