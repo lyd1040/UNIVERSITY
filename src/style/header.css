@@ -423,11 +423,11 @@
     }
 
     /* 학교 다른 홈페이지 (학교홈페이지, 입학안내, 대학원안내) 이동 텍스트 */
-    .header .header_contents_wrap .header_contents_right .gnb_container_wrap .gnb_container .school_other_container_wrap .school_other_container li{
+    .header .header_contents_wrap .header_contents_right .gnb_container_wrap .gnb_container .school_other_container_wrap .school_other_container .school_other_contents{
         margin: 10px 0;
 
     }
-    .header .header_contents_wrap .header_contents_right .gnb_container_wrap .gnb_container .school_other_container_wrap .school_other_container li a{
+    .header .header_contents_wrap .header_contents_right .gnb_container_wrap .gnb_container .school_other_container_wrap .school_other_container .school_other_contents a{
         border: 1px solid #003d7a;
         border-radius: 5px;
         padding: 4px 10px;
@@ -439,7 +439,7 @@
         background: #1715aaa4;
     }
     /* (로그인, 회원가입) 이동 텍스트 */
-    .header .header_contents_wrap .header_contents_right .gnb_container_wrap .gnb_container .school_other_container_wrap .school_login_container li a{
+    .header .header_contents_wrap .header_contents_right .gnb_container_wrap .gnb_container .school_other_container_wrap .school_login_container .school_login_contents a{
         color: #fff;
     }
     .header .header_contents_wrap .header_contents_right .gnb_container_wrap .gnb_container .school_other_container_wrap .school_login_container li a:hover{
@@ -468,6 +468,7 @@
         flex-direction: column;
         
     }
+
     /* GNB 메뉴 이름 */
     .header .header_contents_wrap .header_contents_right .gnb_container_wrap .gnb_container .gnb .menu_wrap .gnb_contents_name{
         position: static;
@@ -477,7 +478,11 @@
         margin: 0 auto;
         padding: 10px 0;
     }
-
+    .header .header_contents_wrap .header_contents_right .gnb_container_wrap .gnb_container .gnb .menu_wrap .gnb_contents_name:hover::before{
+        border: 0;
+        width: 0;
+        height: 0;
+    }
     /* GNB 하위 메뉴 */
 
     .header .header_contents_wrap .header_contents_right .gnb_container_wrap .gnb_container .gnb .menu_wrap .gnb_contents_name h2{
