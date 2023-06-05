@@ -1,6 +1,6 @@
-window.onload=()=>{
-    show_hide_header();
-}
+
+show_hide_header();
+
 
 function show_hide_header(){
     let gnb_contents_name = document.querySelectorAll('.gnb_contents_name');

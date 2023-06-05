@@ -1,6 +1,6 @@
 /********************** PC **********************/
 .header{
-
+    position: relative;
     width: 100%;
     min-width: 630px;
     height: 70px;
