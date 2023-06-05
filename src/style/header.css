@@ -136,6 +136,24 @@
     display: flex;
     justify-content: end;
 }
+.header .header_contents_wrap .header_contents_right .gnb_container_wrap .gnb_container .school_other_container_wrap ul:nth-child(2) li a{
+    color: #000;
+}
+.header .header_contents_wrap .header_contents_right .gnb_container_wrap .gnb_container .school_other_container_wrap ul:nth-child(2) li a:hover{
+    text-decoration: underline;
+}
+
+.header .header_contents_wrap .header_contents_right .gnb_container_wrap .gnb_container .school_other_container_wrap ul:nth-child(1) li a{
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 3px;
+
+    background: #008D91;
+    color: #fff;
+}
+.header .header_contents_wrap .header_contents_right .gnb_container_wrap .gnb_container .school_other_container_wrap ul:nth-child(1) li a:active{
+    background: #0061c5;
+}
 .header .header_contents_wrap .header_contents_right .gnb_container_wrap .gnb_container .school_other_container_wrap .school_other_container{
     width: 100%;
     height: 20px;
@@ -170,7 +188,7 @@
     position: absolute;
     top: 50px;
 
-    width: calc(143.2px * 3 + 122.41px);
+    width: calc(143.2px * 2 + 122.41px + 101.61px);
     height: 152px;
 
     background: #d6d6d6;
@@ -203,6 +221,19 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.header .header_contents_wrap .header_contents_right .gnb_container_wrap .gnb_container .gnb .menu_wrap>li:hover::before{
+    position: absolute;
+    content: '';
+
+    width: 100%;
+    height: 100%;
+    border-bottom: 3px solid #0061c5;
+
+    pointer-events: none;
+}
+.header .header_contents_wrap .header_contents_right .gnb_container_wrap .gnb_container .gnb .menu_wrap>li h2 a{
+    color: #0061c5;
 }
 
 /* gnb 하위 메뉴들 */
@@ -255,6 +286,10 @@
 }
 .header .header_contents_wrap .header_contents_right.active .gnb_container_wrap .gnb_container .gnb .menu_wrap>li>ul li:hover{
     background: #fff;
+}
+
+.header .header_contents_wrap .header_contents_right .gnb_container_wrap .gnb_container .gnb .menu_wrap>li>ul li a{
+    color: #000;
 }
 
 /* gnb_menu_bar_btn */
@@ -323,7 +358,7 @@
         height: 100vh;
 
         backdrop-filter: blur(3px);
-        background: #0063c5e7;
+        background: #0063c5;
 
         opacity: 0;
 
@@ -385,6 +420,30 @@
         flex-direction: column;
 
         font-size: 1.3em;
+    }
+
+    /* 학교 다른 홈페이지 (학교홈페이지, 입학안내, 대학원안내) 이동 텍스트 */
+    .header .header_contents_wrap .header_contents_right .gnb_container_wrap .gnb_container .school_other_container_wrap .school_other_container li{
+        margin: 10px 0;
+
+    }
+    .header .header_contents_wrap .header_contents_right .gnb_container_wrap .gnb_container .school_other_container_wrap .school_other_container li a{
+        border: 1px solid #003d7a;
+        border-radius: 5px;
+        padding: 4px 10px;
+
+        background: #004a94;
+        color: #fff;
+    }
+    .header .header_contents_wrap .header_contents_right .gnb_container_wrap .gnb_container .school_other_container_wrap .school_other_container li a:active{
+        background: #1715aaa4;
+    }
+    /* (로그인, 회원가입) 이동 텍스트 */
+    .header .header_contents_wrap .header_contents_right .gnb_container_wrap .gnb_container .school_other_container_wrap .school_login_container li a{
+        color: #fff;
+    }
+    .header .header_contents_wrap .header_contents_right .gnb_container_wrap .gnb_container .school_other_container_wrap .school_login_container li a:hover{
+        text-decoration: underline;
     }
 
     /* GNB (위쪽) */
@@ -459,7 +518,7 @@
 
         letter-spacing: -2px;
     }
-
+    
     .header .header_contents_wrap .header_contents_right.active .gnb_container_wrap .gnb_container .gnb .menu_wrap .gnb_contents_name .gnb_detail_menu_wrap{
         display: none;
     }
@@ -476,6 +535,14 @@
         border: 0;
     }
 
+    .header .header_contents_wrap .header_contents_right .gnb_container_wrap .gnb_container .gnb .menu_wrap>li>ul li a{
+        color: #fff;
+    }
+    .header .header_contents_wrap .header_contents_right .gnb_container_wrap .gnb_container .gnb .menu_wrap>li>ul li a:hover{
+        text-decoration: underline;
+    }
+
+    /* GNB 나타내고 숨기는 햄버거 버튼 */
     .header .header_contents_wrap .header_contents_right .gnb_container_wrap .show_hide_gnb_btn_wrap{
         position: absolute;
         top: 50%;
@@ -498,4 +565,6 @@
     .header .header_contents_wrap .header_contents_right .gnb_container_wrap .show_hide_gnb_btn_wrap .show_hide_gnb_btn.active{
         color: #fff;
     }
+
+
 }
