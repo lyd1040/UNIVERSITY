@@ -2,7 +2,6 @@
 .header{
     position: relative;
     width: 100%;
-    min-width: 630px;
     height: 70px;
 
     z-index: 50;
@@ -103,14 +102,18 @@
 
 /* 로고 텍스트(WOOSUK UNIVERSITY) */
 .header .header_contents_wrap .header_contents_left .logo_wrap .logo_text_box .school_en_name_wrap{
-
+    position: relative;
     font-size: 1.3em;
     font-weight: 700;
 
     margin-top: 2px;
+
+    z-index: 1;
 }
 .header .header_contents_wrap .header_contents_left .logo_wrap .logo_text_box .school_en_name_wrap a{
     color: #000;
+
+    transition: 0.5s;
 }
 
 
@@ -313,7 +316,7 @@
     color: #000;
 }
 /********************** MOBILE **********************/
-@media screen and (max-width:1110px) {
+@media screen and (max-width:1020px) {
 
     .header .header_contents_wrap .header_contents_right.active .gnb_container_wrap .gnb_container .gnb .gnb_bg{
         width: 0;
@@ -326,34 +329,76 @@
         position: absolute;
         top: 0;
         left: 0;
+
+        width: 75%;
+
+    }
+    /* 로고 이미지 */
+    .header .header_contents_wrap .header_contents_left .logo_wrap .logo_img_box{
+        position: relative;
+
+        border-radius: 50%;
+
+        z-index: 1;
+    }
+    .header .header_contents_wrap .header_contents_left .logo_wrap .logo_img_box h1{
+        width: 100%;
+        height: 100%;
+
+    }
+    .header .header_contents_wrap .header_contents_left .logo_wrap .logo_img_box h1 img{
+        width: 100%;
     }
 
     /* 우석대학교 텍스트 */
     .header .header_contents_wrap .header_contents_left .logo_wrap .logo_text_box .school_kr_name_wrap .school_kr_name{
         transform: translateY(0px);
         transition: 0.3s;
-    }
-    .header .header_contents_wrap .header_contents_left .logo_wrap .logo_text_box .school_kr_name_wrap .school_kr_name.active{
-        transform: translateY(10px);
+
+        font-size: 0.8em;
     }
     .header .header_contents_wrap .header_contents_left .logo_wrap .logo_text_box .school_kr_name_wrap .school_kr_name a{
-        font-size: 1em;
         color: #000;
         transition: 0.3s;
     }
     .header .header_contents_wrap .header_contents_left .logo_wrap .logo_text_box .school_kr_name_wrap .school_kr_name.active a{
         
-        font-size: 1.7em;
         color: #fff;
     }
+
+    /* 컴퓨터 공학과 텍스트 */
+    .header .header_contents_wrap .header_contents_left .logo_wrap .logo_text_box .school_kr_name_wrap .department{
+
+        font-size: 0.5em;
+    
+        display: flex;
+        align-items: end;
+    }
+    .header .header_contents_wrap .header_contents_left .logo_wrap .logo_text_box .school_kr_name_wrap .department a{
+        color: #000;
+    }
+
+    /* 로고 텍스트(WOOSUK UNIVERSITY) */
+    .header .header_contents_wrap .header_contents_left .logo_wrap .logo_text_box .school_en_name_wrap{
+
+        font-size: 0.6em;
+        font-weight: 700;
+
+        margin-top: 2px;
+    }
+    .header .header_contents_wrap .header_contents_left .logo_wrap .logo_text_box .school_en_name_wrap a{
+        color: #000;
+    }
+    .header .header_contents_wrap .header_contents_left .logo_wrap .logo_text_box .school_en_name_wrap .school_en_name.active a{
+        color: #fff;
+    }
+
 
     /* 헤더 오른쪽 */
     .header .header_contents_wrap .header_contents_right .gnb_container_wrap .gnb_container{
         position: absolute;
         left: 0;
-
-        transform: translateX(100%);
-
+        
         width: 100%;
         height: 100vh;
 
@@ -363,10 +408,12 @@
         opacity: 0;
 
         transition: 0.3s;
+        pointer-events: none;
     }
     .header .header_contents_wrap .header_contents_right .gnb_container_wrap .gnb_container.active{
         opacity: 1;
-        transform: translateX(0);
+
+        pointer-events: all;
     }
 
     /* 다른 사이트 컨텐츠 (아래쪽) */
@@ -426,6 +473,8 @@
     .header .header_contents_wrap .header_contents_right .gnb_container_wrap .gnb_container .school_other_container_wrap .school_other_container .school_other_contents{
         margin: 10px 0;
 
+        font-size: 0.8em;
+
     }
     .header .header_contents_wrap .header_contents_right .gnb_container_wrap .gnb_container .school_other_container_wrap .school_other_container .school_other_contents a{
         border: 1px solid #003d7a;
@@ -473,10 +522,12 @@
     .header .header_contents_wrap .header_contents_right .gnb_container_wrap .gnb_container .gnb .menu_wrap .gnb_contents_name{
         position: static;
 
-        width: 50%;
+        width: 55%;
 
         margin: 0 auto;
-        padding: 10px 0;
+        padding: 3px 0;
+
+        font-size: 0.5em;
     }
     .header .header_contents_wrap .header_contents_right .gnb_container_wrap .gnb_container .gnb .menu_wrap .gnb_contents_name:hover::before{
         border: 0;
@@ -493,7 +544,7 @@
     }
     
     .header .header_contents_wrap .header_contents_right .gnb_container_wrap .gnb_container .gnb .menu_wrap .gnb_contents_name h2.click_active{
-        transform: translateX(100px);
+        transform: translateX(50px);
     }
 
     .header .header_contents_wrap .header_contents_right .gnb_container_wrap .gnb_container .gnb .menu_wrap .gnb_contents_name h2 a{
@@ -551,13 +602,17 @@
     .header .header_contents_wrap .header_contents_right .gnb_container_wrap .show_hide_gnb_btn_wrap{
         position: absolute;
         top: 50%;
-        right: 30px;
+        right: 10px;
 
         transform: translateY(-50%);
         
         display: flex;
 
         border: 0;
+
+        font-size: 0.8em;
+
+        z-index: 1;
     }
 
     .header .header_contents_wrap .header_contents_right .gnb_container_wrap .show_hide_gnb_btn_wrap .show_hide_gnb_btn{
