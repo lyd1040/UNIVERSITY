@@ -26,7 +26,8 @@ const headerFooterPrint = async () => {
 };
 
 const getHeader = () => {
-  const response = fetch("/UNIVERSITY_moblie_pc_web_app/UNIVERSITY/src/view/header/header.html");
+  /* "/UNIVERSITY_moblie_pc_web_app/UNIVERSITY/src/view/header/header.html" */
+  const response = fetch("/src/view/header/header.html");
   return response.then((res) => res.text());
 };
 /* 
@@ -38,6 +39,7 @@ const getFooter = () => {
 
 const headerFooterJs = () => {
   let createScript = document.createElement("script");
-  createScript.setAttribute("src", "/UNIVERSITY_moblie_pc_web_app/UNIVERSITY/src/script/header.js");
+  /* /UNIVERSITY_moblie_pc_web_app/UNIVERSITY/src/script/header.js */
+  createScript.setAttribute("src", "/src/script/header.js");
   body.appendChild(createScript);
 };
