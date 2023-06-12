@@ -1,7 +1,5 @@
 html{
 	background: #fff;
-
-	overflow: hidden;
 }
 html, body, div, span, iframe,
 h1, h2, h3, h4, h5, h6, p,
@@ -57,4 +55,9 @@ a{
     line-height:0;
     text-indent:-9999em;
     overflow:hidden;
+}
+
+main{
+	width: 100%;
+	min-width: 1020px;
 }

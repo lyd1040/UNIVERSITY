@@ -1,0 +1,22 @@
+/************************ PC ***********************/
+.main_wrap{
+    width: 100%;
+    height: 80vh;
+}
+.main_wrap .banner_wrap{
+    width: 1020px;
+
+    margin: auto;
+    border: 1px solid;
+}
+/********************** MOBILE **********************/
+@media screen and (max-width:1050px) {
+    .main{
+        width: 100%;
+        min-width: 100%;
+    }
+    .main_wrap .banner_wrap{
+        width: 100%;
+    }
+
+}

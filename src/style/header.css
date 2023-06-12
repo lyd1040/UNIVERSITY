@@ -262,6 +262,7 @@
 .header .header_contents_wrap .header_contents_right .gnb_container_wrap .gnb_container .gnb .menu_wrap>li>ul::before{
     position: absolute;
     top: 50%;
+    left: -1px;
 
     transform: translateY(-50%);
 
@@ -316,7 +317,7 @@
     color: #000;
 }
 /********************** MOBILE **********************/
-@media screen and (max-width:1020px) {
+@media screen and (max-width:1050px) {
 
     .header .header_contents_wrap .header_contents_right.active .gnb_container_wrap .gnb_container .gnb .gnb_bg{
         width: 0;
