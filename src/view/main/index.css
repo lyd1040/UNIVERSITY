@@ -9,6 +9,13 @@
     margin: auto;
     border: 1px solid;
 }
+.main_wrap .banner_wrap .banner{
+    width: 100%;
+
+    border: 1px solid;
+
+    display: flex;
+}
 /********************** MOBILE **********************/
 @media screen and (max-width:1050px) {
     .main{
