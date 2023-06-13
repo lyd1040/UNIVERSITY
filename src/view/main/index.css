@@ -12,9 +12,175 @@
 .main_wrap .banner_wrap .banner{
     width: 100%;
 
-    border: 1px solid;
+    display: flex;
+}
+/***** 배너 로고 ******/
+.main_wrap .banner_wrap .banner .banner_center{
+    position: relative;
+    width: 20%;
+
+    z-index: 1;
+}
+.main_wrap .banner_wrap .banner .banner_center .banner_logo_box{
+    position: relative;
+    width: 100%;
+    height: 250px;
 
     display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main_wrap .banner_wrap .banner .banner_center .banner_logo_box span{
+    position: absolute;
+    width: 80%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+    border-radius: 50%;
+}
+.main_wrap .banner_wrap .banner .banner_center .banner_logo_box span img{
+    width: 100%;
+}
+.main_wrap .banner_wrap .banner .banner_center .banner_logo_box span:nth-child(1) img{
+    animation: rotation_inf 30s infinite linear;
+}
+.main_wrap .banner_wrap .banner .banner_center .banner_logo_box span:nth-child(2) img{
+    position: relative;
+    clip-path: circle(34.0% at 50% 50%);
+    
+}
+
+@keyframes rotation_inf{
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: 
+    }
+}
+.main_wrap .banner_wrap .banner .banner_left ,
+.main_wrap .banner_wrap .banner .banner_right {
+    position: relative;
+    width: 40%;
+
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+    z-index: 0;
+}
+/* 컨텐츠 소개 묶음 */
+.main_wrap .banner_wrap .banner .banner_left .banner_container ,
+.main_wrap .banner_wrap .banner .banner_right .banner_container{
+    height: 50%;
+
+    display: flex;
+}
+/***** 컨텐츠 슬라이드 중심잡기 *****/
+.main_wrap .banner_wrap .banner .banner_left .banner_container .banner_contents_wrap ,
+.main_wrap .banner_wrap .banner .banner_right .banner_container .banner_contents_wrap{
+    position: relative;
+
+    width: 75%;
+}
+/* 컨텐츠 슬라이드 */
+.main_wrap .banner_wrap .banner .banner_left .banner_container .banner_contents_wrap .banner_slide_contents ,
+.main_wrap .banner_wrap .banner .banner_right .banner_container .banner_contents_wrap .banner_slide_contents{
+    position: absolute;
+    top: 50%;
+    left: 0;
+
+    transform: translateY(-50%);
+
+    width: 100%;
+    height: 80%;
+}
+/* 컨텐츠 소개 */
+.main_wrap .banner_wrap .banner .banner_left .banner_container .banner_contents_wrap .banner_slide_contents .banner_contents_intro ,
+.main_wrap .banner_wrap .banner .banner_right .banner_container .banner_contents_wrap .banner_slide_contents .banner_contents_intro{
+    width: 100%;
+    height: 80%;
+
+    border: 1px solid;
+}
+
+/* 자세히보기 버튼 */
+.main_wrap .banner_wrap .banner .banner_left .banner_container .banner_contents_wrap .banner_slide_contents .show_detail_page_btn_wrap ,
+.main_wrap .banner_wrap .banner .banner_right .banner_container .banner_contents_wrap .banner_slide_contents .show_detail_page_btn_wrap{
+    width: 100%;
+    height: 20%;
+
+    text-align: center;
+}
+
+.main_wrap .banner_wrap .banner .banner_left .banner_container .banner_contents_wrap .banner_slide_contents .show_detail_page_btn_wrap button ,
+.main_wrap .banner_wrap .banner .banner_right .banner_container .banner_contents_wrap .banner_slide_contents .show_detail_page_btn_wrap button{
+    background: 0;
+
+    border: 1px solid;
+    border-radius: 2px;
+
+}
+/***** 컨텐츠 이름과 이미지 묶음 *****/
+.main_wrap .banner_wrap .banner .banner_left .banner_container .banner_contents_name_wrap ,
+.main_wrap .banner_wrap .banner .banner_right .banner_container .banner_contents_name_wrap{
+    position: relative;
+    width: 25%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* 컨텐츠 이름 위 이미지 */
+.main_wrap .banner_wrap .banner .banner_left .banner_container .banner_contents_name_wrap .banner_contents_icon_box ,
+.main_wrap .banner_wrap .banner .banner_right .banner_container .banner_contents_name_wrap .banner_contents_icon_box{
+    width: 50%;
+    height: 50%;
+}
+
+.main_wrap .banner_wrap .banner .banner_left .banner_container .banner_contents_name_wrap .banner_contents_icon_box img ,
+.main_wrap .banner_wrap .banner .banner_right .banner_container .banner_contents_name_wrap .banner_contents_icon_box img{
+    position: absolute;
+    transform: rotate(0) translate(0);
+    width: 50%;
+
+    border-radius: 50% ;
+
+    transition: 0.5s;
+}
+
+/* 이미지 위치 지정 */
+.main_wrap .banner_wrap .banner:hover .banner_left .banner_container .banner_contents_name_wrap .banner_contents_icon_box .curriculum_img{
+    transform: translate(300%,100%); /* 300% 100% */
+}
+.main_wrap .banner_wrap .banner:hover .banner_left .banner_container .banner_contents_name_wrap .banner_contents_icon_box .education_img{
+    transform: translate(300%,-147%); /* 300% -147% */
+}
+.main_wrap .banner_wrap .banner:hover .banner_right .banner_container .banner_contents_name_wrap .banner_contents_icon_box .entrance_info_img{
+    transform: translate(-300%,100%); /* -300% 100% */
+}
+.main_wrap .banner_wrap .banner:hover .banner_right .banner_container .banner_contents_name_wrap .banner_contents_icon_box .location_img{
+    transform: translate(-300%,-147%); /* -300% -147% */
+}
+
+/* 컨텐츠 이름 */
+.main_wrap .banner_wrap .banner:hover .banner_left .banner_container .banner_contents_name_wrap .banner_contents_name,
+.main_wrap .banner_wrap .banner:hover .banner_right .banner_container .banner_contents_name_wrap .banner_contents_name{
+    font-size: 0.9em;
+    opacity: 0;
+
+    transition: 0.5s;
+}
+.main_wrap .banner_wrap .banner .banner_left .banner_container .banner_contents_name_wrap .banner_contents_name,
+.main_wrap .banner_wrap .banner .banner_right .banner_container .banner_contents_name_wrap .banner_contents_name{
+    opacity: 1;
+
+    transition: 0.5s;
 }
 /********************** MOBILE **********************/
 @media screen and (max-width:1050px) {
@@ -24,6 +190,144 @@
     }
     .main_wrap .banner_wrap{
         width: 100%;
+    }
+
+    .main_wrap .banner_wrap .banner{
+        width: 100%;
+    
+        border: 1px solid;
+    
+        display: flex;
+    }
+    .main_wrap .banner_wrap .banner .banner_center{
+        width: 20%;
+    }
+    .main_wrap .banner_wrap .banner .banner_center .banner_logo_box{
+        position: relative;
+        width: 100%;
+        height: 250px;
+    
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .main_wrap .banner_wrap .banner .banner_center .banner_logo_box span{
+        position: absolute;
+        width: 80%;
+    
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+        overflow: hidden;
+        border-radius: 50%;
+    }
+    .main_wrap .banner_wrap .banner .banner_center .banner_logo_box span img{
+        position: relative;
+        width: 100%;
+    }
+    .main_wrap .banner_wrap .banner .banner_center .banner_logo_box span:nth-child(1) img{
+        animation: rotation_inf 30s infinite linear;
+    }
+    .main_wrap .banner_wrap .banner .banner_center .banner_logo_box span:nth-child(2) img{
+        position: relative;
+        clip-path: circle(34.0% at 50% 50%);
+        
+    }
+    
+    @keyframes rotation_inf{
+        0%{
+            transform: rotate(0);
+        }
+        100%{
+            transform: 
+        }
+    }
+    .main_wrap .banner_wrap .banner .banner_left ,
+    .main_wrap .banner_wrap .banner .banner_right {
+        width: 40%;
+    
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+    /* 컨텐츠 소개 묶음 */
+    .main_wrap .banner_wrap .banner .banner_left .banner_container ,
+    .main_wrap .banner_wrap .banner .banner_right .banner_container{
+        height: 50%;
+    
+        display: flex;
+    }
+    /***** 컨텐츠 슬라이드 중심잡기 *****/
+    .main_wrap .banner_wrap .banner .banner_left .banner_container .banner_contents_wrap ,
+    .main_wrap .banner_wrap .banner .banner_right .banner_container .banner_contents_wrap{
+        position: relative;
+    
+        width: 75%;
+    }
+    /* 컨텐츠 슬라이드 */
+    .main_wrap .banner_wrap .banner .banner_left .banner_container .banner_contents_wrap .banner_slide_contents ,
+    .main_wrap .banner_wrap .banner .banner_right .banner_container .banner_contents_wrap .banner_slide_contents{
+        position: absolute;
+        top: 50%;
+        left: 0;
+    
+        transform: translateY(-50%);
+    
+        width: 100%;
+        height: 80%;
+    }
+    /* 컨텐츠 소개 */
+    .main_wrap .banner_wrap .banner .banner_left .banner_container .banner_contents_wrap .banner_slide_contents .banner_contents_intro ,
+    .main_wrap .banner_wrap .banner .banner_right .banner_container .banner_contents_wrap .banner_slide_contents .banner_contents_intro{
+        width: 100%;
+        height: 80%;
+    
+        border: 1px solid;
+    }
+    
+    /* 자세히보기 버튼 */
+    .main_wrap .banner_wrap .banner .banner_left .banner_container .banner_contents_wrap .banner_slide_contents .show_detail_page_btn_wrap ,
+    .main_wrap .banner_wrap .banner .banner_right .banner_container .banner_contents_wrap .banner_slide_contents .show_detail_page_btn_wrap{
+        width: 100%;
+        height: 20%;
+    
+        text-align: center;
+    }
+    
+    .main_wrap .banner_wrap .banner .banner_left .banner_container .banner_contents_wrap .banner_slide_contents .show_detail_page_btn_wrap button ,
+    .main_wrap .banner_wrap .banner .banner_right .banner_container .banner_contents_wrap .banner_slide_contents .show_detail_page_btn_wrap button{
+        background: 0;
+    
+        border: 1px solid;
+        border-radius: 2px;
+    
+    }
+    /***** 컨텐츠 이름과 이미지 묶음 *****/
+    .main_wrap .banner_wrap .banner .banner_left .banner_container .banner_contents_name_wrap ,
+    .main_wrap .banner_wrap .banner .banner_right .banner_container .banner_contents_name_wrap{
+        width: 25%;
+    
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    
+    /* 컨텐츠 이름 위 이미지 */
+    .main_wrap .banner_wrap .banner .banner_left .banner_container .banner_contents_name_wrap .banner_contents_icon_box ,
+    .main_wrap .banner_wrap .banner .banner_right .banner_container .banner_contents_name_wrap .banner_contents_icon_box{
+        width: 50%;
+    }
+    .main_wrap .banner_wrap .banner .banner_left .banner_container .banner_contents_name_wrap .banner_contents_icon_box img ,
+    .main_wrap .banner_wrap .banner .banner_right .banner_container .banner_contents_name_wrap .banner_contents_icon_box img{
+        width: 100%;
+    }
+    
+    /* 컨텐츠 이름 */
+    .main_wrap .banner_wrap .banner .banner_left .banner_container .banner_contents_name_wrap .banner_contents_name,
+    .main_wrap .banner_wrap .banner .banner_right .banner_container .banner_contents_name_wrap .banner_contents_name{
+        font-size: 0.9em;
     }
 
 }
