@@ -20,14 +20,17 @@ audio, video {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
+	box-sizing: border-box;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, figcaption, figure, 
 footer, header, menu, nav, section {
 	display: block;
+	box-sizing: border-box;
 }
 body {
 	line-height: 1;
+	box-sizing: border-box;
 }
 ol, ul {
 	list-style: none;
@@ -60,4 +63,6 @@ a{
 main{
 	width: 100%;
 	min-width: 1020px;
+
+	margin-top: 70px;
 }

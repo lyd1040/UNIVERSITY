@@ -1,8 +1,5 @@
 /************************ PC ***********************/
-.main_wrap{
-    width: 100%;
-    height: 80vh;
-}
+
 .main_wrap .banner_wrap{
     width: 100%;
 
@@ -20,6 +17,7 @@
 
     display: flex;
 }
+
 /***** 배너 로고 ******/
 .main_wrap .banner_wrap .banner .banner_center{
     position: relative;
@@ -135,22 +133,22 @@
     }
 }
 .main_wrap .banner_wrap .banner .banner_container .banner_contents_wrap .banner_slide_contents.entrance_info_bg{
-    background: url(../../assets/images/main/entrance_info.png) no-repeat;
+    background: url(../../assets/images/main/entrance_info.jpg) no-repeat;
     background-position: center;
     background-size: cover;
 }
 .main_wrap .banner_wrap .banner .banner_container .banner_contents_wrap .banner_slide_contents.curriculum_bg{
-    background: url(../../assets/images/main/curriculum.png) no-repeat;
+    background: url(../../assets/images/main/curriculum.jpg) no-repeat;
     background-position: center;
     background-size: cover;
 }
 .main_wrap .banner_wrap .banner .banner_container .banner_contents_wrap .banner_slide_contents.education_bg{
-    background: url(../../assets/images/main/education.png) no-repeat;
+    background: url(../../assets/images/main/education.jpg) no-repeat;
     background-position: center;
     background-size: cover;
 }
 .main_wrap .banner_wrap .banner .banner_container .banner_contents_wrap .banner_slide_contents.location_bg{
-    background: url(../../assets/images/main/location.png) no-repeat;
+    background: url(../../assets/images/main/location.jpg) no-repeat;
     background-position: center;
     background-size: cover;
 }
@@ -158,8 +156,21 @@
 /* 컨텐츠 소개 */
 .main_wrap .banner_wrap .banner .banner_left .banner_container .banner_contents_wrap .banner_slide_contents .banner_contents_intro ,
 .main_wrap .banner_wrap .banner .banner_right .banner_container .banner_contents_wrap .banner_slide_contents .banner_contents_intro{
-    width: 100%;
-    height: 80%;
+    width: 80%;
+    height: calc(80% - 10px);
+
+    padding: 10px;
+    border-radius: 5px;
+    margin: 0 auto;
+    margin-top: 10px;
+
+    background: #0000005d;
+    backdrop-filter: blur(2px);
+    
+    display: flex;
+    flex-direction: column;
+
+    font-size: 0.8em;
 }
 
 /* 자세히보기 버튼 */
@@ -169,6 +180,10 @@
     height: 20%;
 
     text-align: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .main_wrap .banner_wrap .banner .banner_left .banner_container .banner_contents_wrap .banner_slide_contents .show_detail_page_btn_wrap a ,
@@ -176,13 +191,13 @@
 
     border: 0;
     border-radius: 3px;
-    padding: 2px 7px;
+    padding: 5px 10px;
 
     font-size: 0.7em;
 
     color: #000;
 
-    background: #ffffff70;
+    background: #ffffffe7;
 }
 .main_wrap .banner_wrap .banner .banner_container .banner_contents_wrap .banner_slide_contents .show_detail_page_btn_wrap a:active{
     background: #008D91;
@@ -285,45 +300,54 @@
 /********************** MOBILE **********************/
 @media screen and (max-width:1050px) {
     .main{
-        width: 100%;
         min-width: 100%;
+        
     }
+
     .main_wrap .banner_wrap{
         width: 100%;
+        max-height: 300px;
+
+        padding: 0; /* 재설정 */
+
+        display: flex;
     }
 
     .main_wrap .banner_wrap .banner{
+        position: relative;
         width: 100%;
-    
-        border: 1px solid;
-    
-        display: flex;
+        max-width: 500px;
+        height: 100%;
+
+        display: block;
     }
+
+    /* 배너로고 */
     .main_wrap .banner_wrap .banner .banner_center{
-        width: 20%;
+        position: relative;
+        top: 0;
+        left: 100%;
+        transform: translateX(-100%);
+
+        width: 40%;
+        height: 100%;
     }
+    
     .main_wrap .banner_wrap .banner .banner_center .banner_logo_box{
         position: relative;
         width: 100%;
-        height: 250px;
+        height: 100%;
     
         display: flex;
         justify-content: center;
         align-items: center;
     }
     .main_wrap .banner_wrap .banner .banner_center .banner_logo_box span{
-        position: absolute;
         width: 80%;
-    
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    
+
         overflow: hidden;
-        border-radius: 50%;
     }
     .main_wrap .banner_wrap .banner .banner_center .banner_logo_box span img{
-        position: relative;
         width: 100%;
     }
     .main_wrap .banner_wrap .banner .banner_center .banner_logo_box span:nth-child(1) img{
@@ -334,86 +358,46 @@
         clip-path: circle(34.0% at 50% 50%);
         
     }
+
+    /* 배너 오른쪽 왼쪽 */
     .main_wrap .banner_wrap .banner .banner_left ,
     .main_wrap .banner_wrap .banner .banner_right {
         width: 40%;
-    
-        display: flex;
-        justify-content: space-between;
-        flex-direction: column;
     }
     /* 컨텐츠 소개 묶음 */
     .main_wrap .banner_wrap .banner .banner_left .banner_container ,
     .main_wrap .banner_wrap .banner .banner_right .banner_container{
-        height: 50%;
-    
-        display: flex;
+        margin: 10px 0;
     }
-    /***** 컨텐츠 슬라이드 중심잡기 *****/
+    /***** 컨텐츠 슬라이드 숨기기 *****/
     .main_wrap .banner_wrap .banner .banner_left .banner_container .banner_contents_wrap ,
     .main_wrap .banner_wrap .banner .banner_right .banner_container .banner_contents_wrap{
-        position: relative;
-    
-        width: 75%;
-    }
-    /* 컨텐츠 슬라이드 */
-    .main_wrap .banner_wrap .banner .banner_left .banner_container .banner_contents_wrap .banner_slide_contents ,
-    .main_wrap .banner_wrap .banner .banner_right .banner_container .banner_contents_wrap .banner_slide_contents{
-        position: absolute;
-        top: 50%;
-        left: 0;
-    
-        transform: translateY(-50%);
-    
-        width: 100%;
-        height: 80%;
-    }
-    
-    /* 컨텐츠 소개 */
-    .main_wrap .banner_wrap .banner .banner_left .banner_container .banner_contents_wrap .banner_slide_contents .banner_contents_intro ,
-    .main_wrap .banner_wrap .banner .banner_right .banner_container .banner_contents_wrap .banner_slide_contents .banner_contents_intro{
-        width: 100%;
-        height: 80%;
-    
-        border: 1px solid;
-    }
-    
-    /* 자세히보기 버튼 */
-    .main_wrap .banner_wrap .banner .banner_left .banner_container .banner_contents_wrap .banner_slide_contents .show_detail_page_btn_wrap ,
-    .main_wrap .banner_wrap .banner .banner_right .banner_container .banner_contents_wrap .banner_slide_contents .show_detail_page_btn_wrap{
-        width: 100%;
-        height: 20%;
-    
-        text-align: center;
-    }
-    
-    .main_wrap .banner_wrap .banner .banner_left .banner_container .banner_contents_wrap .banner_slide_contents .show_detail_page_btn_wrap a ,
-    .main_wrap .banner_wrap .banner .banner_right .banner_container .banner_contents_wrap .banner_slide_contents .show_detail_page_btn_wrap a{
-        background: 0;
-    
-        border: 1px solid;
-        border-radius: 2px;
-    
+        display: none;
     }
     /***** 컨텐츠 이름과 이미지 묶음 *****/
     .main_wrap .banner_wrap .banner .banner_left .banner_container .banner_contents_name_wrap ,
     .main_wrap .banner_wrap .banner .banner_right .banner_container .banner_contents_name_wrap{
-        width: 25%;
+        width: 100%;
     
         display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
+        flex-direction: row;
+
+        font-size: 2vw;
     }
     
     /* 컨텐츠 이름 위 이미지 */
     .main_wrap .banner_wrap .banner .banner_left .banner_container .banner_contents_name_wrap .banner_contents_icon_box ,
     .main_wrap .banner_wrap .banner .banner_right .banner_container .banner_contents_name_wrap .banner_contents_icon_box{
         width: 50%;
+        height: 100%;
+
+        display: flex;
+        justify-content: center;
     }
     .main_wrap .banner_wrap .banner .banner_left .banner_container .banner_contents_name_wrap .banner_contents_icon_box img ,
     .main_wrap .banner_wrap .banner .banner_right .banner_container .banner_contents_name_wrap .banner_contents_icon_box img{
-        width: 100%;
+        position: relative;
+        height: 100%;
     }
     
     /* 컨텐츠 이름 */
