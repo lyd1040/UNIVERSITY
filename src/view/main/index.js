@@ -23,22 +23,29 @@ function banner_animation(){
 /****** 첫번째 컨텐츠(전공) ******/
 function first_contents(){
     let specialty_list_items = document.querySelectorAll('.specialty_list>li');
+    let select_specialty_imgs = document.querySelectorAll('.select_specialty_img');
 
-    specialty_list_items.forEach(e=>{
+    
+    specialty_list_items.forEach((e,idx)=>{
         e.addEventListener('mouseover',()=>{
-            e.classList.add('active');
-        });
-
-        e.addEventListener('mouseout',()=>{
             first_contents_rm_class(specialty_list_items);
-        })
+            first_contents_add_class(e);
+
+            first_contents_rm_class(select_specialty_imgs);
+            first_contents_add_class(select_specialty_imgs[idx]);
+        });
     })
 }
 
+
+/* 클래스 지우기 */
 function first_contents_rm_class(arr){
     for(let x=0; x<arr.length; x++){
         arr[x].classList.remove('active');
     }
+}
+function first_contents_add_class(item){
+    item.classList.add('active');
 }
 
 
@@ -60,16 +67,15 @@ function second_contents(){
 function gallery_left_move(count){
     let show_gallery_img_ul = document.querySelector('.show_gallery>ul');
     let show_gallery_img_items = document.querySelectorAll('.show_gallery_img>li');
-    let result = result_();
+
+    let gallery_items_width =show_gallery_img_items[0].clientWidth;
 
     if(count<show_gallery_img_items.length-1){
-        gallery_rm_class(show_gallery_img_items);
         count++;
-
-        console.log(result)
-
+        console.log();
+        gallery_rm_class(show_gallery_img_items);
         gallery_add_class(count, show_gallery_img_items);
-        show_gallery_img_ul.style.transform='translateX(calc('+(-1 * result.sum)+'px + '+(-50 * result.index)+'px))';
+        show_gallery_img_ul.style.transform='translateX(calc('+(count * -gallery_items_width)+'px + '+(-50 * count)+'px))';
         
     }
 
@@ -79,18 +85,17 @@ function gallery_left_move(count){
 function gallery_right_move(count){
     let show_gallery_img_ul = document.querySelector('.show_gallery_img');
     let show_gallery_img_items = document.querySelectorAll('.show_gallery_img>li');
-    let result;
+    
+    let gallery_items_width =show_gallery_img_items[0].clientWidth;
 
     if(count>0){
-        gallery_rm_class(show_gallery_img_items);
-
         count--;
-
+        gallery_rm_class(show_gallery_img_items);
         gallery_add_class(count, show_gallery_img_items);
 
-        result = result_();
-        show_gallery_img_ul.style.transform='translateX(calc('+ result.sum +'px + '+(50 * result.index)+'px))';
+        show_gallery_img_ul.style.transform='translateX(calc('+ (count * -gallery_items_width) +'px + '+(-50 * count)+'px))';
     }
+
     return count;
 }
 
@@ -112,17 +117,20 @@ function gallery_rm_class(arr){
 }
 
 //ul을 움직이기 위한 result 값
-function result_(){
-    let show_gallery_img_items = document.querySelectorAll('.show_gallery_img>li');
+function result_(arr){
     let sum=0;
     let index=0;
 
-    for(let x=0; x<show_gallery_img_items.length; x++){
-        sum+=show_gallery_img_items[x].clientWidth;
+    
+    for(let x=0; x<arr.length; x++){
+        sum+=arr[x].clientWidth;
         index=x+1;
-        if(show_gallery_img_items[x].classList.contains('active'))
+        if(arr[x].classList.contains('active')){
+            console.log(arr[x]);
             break;
+        }
     }
+    console.log(sum);
     return {
         sum,
         index
