@@ -136,3 +136,5 @@ function result_(arr){
         index
     }
 }
+
+new Date().getTime
