@@ -1,0 +1,60 @@
+.banner{
+    border-top: 2px solid #d3d3d3;
+    border-bottom: 2px solid #d3d3d3;
+    height: 250px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* 배너 섹션들 */
+.banner .banner_container{
+    width: 40%;
+
+}
+.banner .banner_container>div{
+
+    margin: auto;
+}
+
+/* 페이지 대표이름 */
+.banner .section_title_wrap .section_title{
+    text-align: center;
+
+    padding: 20px;
+
+    font-size: 1.3rem;
+}
+
+/* lnb */
+.banner .lnb_wrap .lnb{
+    display: flex;
+
+    margin-top: 20px;
+
+    justify-content: center;
+}
+.banner .lnb_wrap .lnb li{
+    width: 200px;
+
+    padding: 10px;
+    margin: 0 5px;
+    border: 1px solid;
+
+
+    text-align: center;
+}
+
+/********************** MOBILE **********************/
+@media screen and (max-width:1050px) {
+    .main{
+        min-width: 100%;
+    }
+    .banner{
+        width: 100%;
+    }
+    .banner .banner_container{
+        width: 100%;
+
+    }
+}
