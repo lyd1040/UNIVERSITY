@@ -6,6 +6,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    background: url(../../assets/images/specialty/banner.jpg);
+    background-position: -8vw;
+    background-size: cover;
 }
 /* 배너 섹션들 */
 .banner .banner_container{
@@ -52,6 +56,7 @@
     }
     .banner{
         width: 100%;
+        background-position: center;
     }
     .banner .banner_container{
         width: 100%;
