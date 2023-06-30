@@ -1,3 +1,10 @@
+@font-face {
+    font-family: 'Jamsil';
+    src: url('../../assets/font/The\ Jamsil\ 3\ Regular.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
 html{
 	background: #fff;
 
@@ -23,6 +30,9 @@ audio, video {
 	font: inherit;
 	vertical-align: baseline;
 	box-sizing: border-box;
+
+	font-family: 'Jamsil';
+	font-weight: 600;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, figcaption, figure, 

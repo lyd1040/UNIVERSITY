@@ -1,3 +1,4 @@
+
 .banner{
     border-top: 2px solid #d3d3d3;
     border-bottom: 2px solid #d3d3d3;
@@ -7,9 +8,13 @@
     justify-content: center;
     align-items: center;
 
-    background: url(../../assets/images/specialty/banner.jpg);
-    background-position: -8vw;
+    background: #00000046 url(../../assets/images/specialty/banner.jpg);
+    background-blend-mode: overlay;
+    background-position: center;
+
     background-size: cover;
+
+    
 }
 /* 배너 섹션들 */
 .banner .banner_container{
@@ -27,7 +32,11 @@
 
     padding: 20px;
 
-    font-size: 1.3rem;
+    font-size: 2rem;
+    font-weight: 700;
+    font-family: 'Jamsil';
+
+    color: #fff;
 }
 
 /* lnb */
@@ -43,10 +52,17 @@
 
     padding: 10px;
     margin: 0 5px;
-    border: 1px solid;
+    border-radius: 3px;
 
+    background: #6e6e6e77 ;
 
     text-align: center;
+}
+.banner .lnb_wrap .lnb li a{
+    color: #fff;
+}
+.banner .lnb_wrap .lnb li:hover{
+    background: #0061c5;
 }
 
 /********************** MOBILE **********************/
