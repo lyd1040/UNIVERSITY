@@ -1,0 +1,253 @@
+
+/* 경로 */
+.container_wrap .path_wrap{
+
+    padding: 10px;
+
+    font-weight: 500;
+
+    border-bottom: 1px solid #d3d3d3;
+}
+
+.container_wrap>h3{
+    width: 100%;
+
+    padding: 30px 0;
+
+    text-align: center;
+
+    font-size: 1.8em;
+    font-weight: 400;
+}
+
+/* 교수 카드 */
+.container_wrap .professor_photo_section{
+    
+    border-top: 1px solid #808080;
+    border-bottom: 1px solid #808080;
+}
+.container_wrap .professor_photo_section .photo_box{
+    position: relative;
+    width: 1050px;
+
+    margin: auto;
+
+    transition: 0.5s;
+}
+.container_wrap .professor_photo_section .photo_box .static_photo_wrap{
+    width: 100%;
+
+    padding: 10px;
+
+    overflow: hidden;
+}
+.container_wrap .professor_photo_section .photo_box .static_photo_wrap ul{
+    position: relative;
+
+
+    width: 1050px;
+
+    display: flex;
+    justify-content: space-between;
+
+    transition: 0.5s;
+}
+
+/* 카드 이미지 및 이름 */
+.container_wrap .professor_photo_section .photo_box .static_photo_wrap ul li{
+    width: 10%;
+}
+.container_wrap .professor_photo_section .photo_box .static_photo_wrap ul li .professor_img{
+    width: 100%;
+    height: 90%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container_wrap .professor_photo_section .photo_box .static_photo_wrap ul li .professor_img a{
+    display: block;
+    width: 100%;
+}
+.container_wrap .professor_photo_section .photo_box .static_photo_wrap ul li .professor_img img{
+    width: 100%;
+    height: 90%;
+    
+}
+
+.container_wrap .professor_photo_section .photo_box .static_photo_wrap ul li .professor_name{
+    font-size: 0.9em;
+    height: 10%;
+
+    text-align: center;
+}
+
+/* 이미지 움직이는 버튼 */
+.container_wrap .professor_photo_section .photo_box>button{
+    position: absolute;
+    top: 0;
+
+    width: 5%;
+    height: 100%;
+
+    background: #50505034;
+    backdrop-filter: blur(3px);
+
+    border: 0;
+    border-left: 1px solid #808080;
+    border-right: 1px solid #808080;
+
+    transition: 0.5s;
+}
+.container_wrap .professor_photo_section .photo_box>button.prev{
+    left: 0;
+    transform: translateX(-100%);
+}
+.container_wrap .professor_photo_section .photo_box>button.next{
+    right: 0;
+    transform: translateX(100%);
+}
+
+/* 교수 정보들 */
+
+.container_wrap .professor_intro_section .professor_intro_center{
+    width: 1050px;
+
+    margin: auto;
+}
+
+.container_wrap .professor_intro_section .professor_intro_center .professor_detail_intro_wrap{
+    width:  80%; /* 840px */
+
+    margin: 50px auto;
+    padding: 10px;
+
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+/* 큰 이미지 */
+.container_wrap .professor_intro_section .professor_intro_center .professor_detail_intro_wrap .professor_big_img_box{
+    width: 250px; /* 252px */
+    padding: 10px;
+
+    display: flex;
+    align-items: start;
+}
+.container_wrap .professor_intro_section .professor_intro_center .professor_detail_intro_wrap .professor_big_img_box img{
+    width: 100%;
+}
+
+/* 기본 정보 */
+.container_wrap .professor_intro_section .professor_intro_center .professor_detail_intro_wrap .professor_basic_intro_wrap{
+    width: 270px;
+
+    border: 1px solid #808080;
+    padding: 10px;
+}
+.container_wrap .professor_intro_section .professor_intro_center .professor_detail_intro_wrap  h5{
+    padding: 5px;
+    border-radius: 2px;
+
+    background: #008c91c0;
+    color: #fff;
+
+    text-align: center;
+}
+.container_wrap .professor_intro_section .professor_intro_center .professor_detail_intro_wrap  ul{
+    height: 90%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.container_wrap .professor_intro_section .professor_intro_center .professor_detail_intro_wrap  ul li{
+    width: 100%;
+    margin-top: 15px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #d3d3d3;
+
+    font-size: 0.9em;
+}
+.container_wrap .professor_intro_section .professor_intro_center .professor_detail_intro_wrap .professor_basic_intro_wrap .basic_intro_container li span{
+    width: 200px;
+}
+
+/* 경력 */
+.container_wrap .professor_intro_section .professor_intro_center .professor_detail_intro_wrap .carrer_wrap{
+
+    border: 1px solid #808080;
+    padding: 10px;
+}
+.container_wrap .professor_intro_section .professor_intro_center .professor_detail_intro_wrap .carrer_wrap h5{ 
+    padding: 5px;
+    border-radius: 2px;
+
+    background: #008c91c0;
+    color: #fff;
+
+    text-align: center;
+}
+
+.container_wrap .professor_intro_section .professor_intro_center .professor_detail_intro_wrap .carrer_wrap .carrer_container{
+    padding: 0;
+    margin: 0;
+    justify-content: start;
+}
+
+@media screen and (max-width:1050px) {
+    .container_wrap .professor_photo_section .photo_box{
+        position: relative;
+        width: 100%;
+    
+        margin: auto;
+    }
+    .container_wrap .professor_intro_section .professor_intro_center{
+        width: 100%;
+    
+        margin: auto;
+    }
+
+    .container_wrap .professor_photo_section .photo_box .static_photo_wrap ul{
+        left: 5%;
+    }
+    /* 이미지 움직이는 버튼 */
+    .container_wrap .professor_photo_section .photo_box>button{
+        position: absolute;
+        top: 0;
+
+        width: 5%;
+    }
+    .container_wrap .professor_photo_section .photo_box>button.prev{
+        left: 0;
+        transform: translateX(0);
+    }
+    .container_wrap .professor_photo_section .photo_box>button.next{
+        right: 0;
+        transform: translateX(0);
+    }
+
+
+    .container_wrap .professor_intro_section .professor_intro_center .professor_detail_intro_wrap{
+        width:  80%; /* 840px */
+    
+        margin: 50px auto;
+        padding: 10px;
+    
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        gap: 20px;
+    }
+
+    /* 기본정보 */
+    .container_wrap .professor_intro_section .professor_intro_center .professor_detail_intro_wrap .professor_basic_intro_wrap{
+        width: 250px;
+    }
+    /* 경력 */
+    .container_wrap .professor_intro_section .professor_intro_center .professor_detail_intro_wrap .carrer_wrap{
+        width: 250px;
+    }
+}

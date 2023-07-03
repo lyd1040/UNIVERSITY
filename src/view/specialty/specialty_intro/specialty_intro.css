@@ -68,4 +68,7 @@
     .container_wrap .section_contents_wrap .container .contents_wrap{
         width: 100%;
     }
+    .container_wrap .section_contents_wrap .container .contents_wrap h4{
+        border-radius: 50px;
+    }
 }

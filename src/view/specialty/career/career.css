@@ -123,16 +123,13 @@
         margin-bottom: 30px;
 
     }
-    .container_wrap .section_contents_wrap .container .contents_wrap .contents h4{
+    .container_wrap .section_contents_wrap .container .contents_wrap .contents>div h4{
         text-align: center;
 
         font-size: 1.1em;
         font-weight: 500;
 
         border-radius: 50px;
-
-        background: #d3d3d3;
-        color: #000;
     }
 
     .container_wrap .section_contents_wrap .container .contents_wrap .contents p{

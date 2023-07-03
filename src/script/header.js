@@ -34,9 +34,6 @@ function show_hide_header(){
         })
     })
     
-    
-
-    console.log(logo_text_box_text);
 
     gnb_show_hide_btn.addEventListener('click',()=>{
         gnb_show_hide_btn.classList.toggle('active');
@@ -54,5 +51,4 @@ function show_hide_header(){
             gnb_show_hide_btn.innerHTML='<i class="fa-solid fa-bars"></i>';
         }
     })
-    console.log(gnb_contents_name);
 }
