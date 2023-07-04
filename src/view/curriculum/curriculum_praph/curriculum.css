@@ -18,22 +18,44 @@
 
     display: flex;
     justify-content: center;
+
+    transition: 0.5s;
 }
 
 .container_wrap .section_contents_wrap .container{
     width: 100%;
 
+    overflow-x: hidden;
+
 }
+/* 컨텐츠 제목 */
 .container_wrap .section_contents_wrap .container .contents_name_wrap{
     text-align: center;
 }
-
+.container_wrap .section_contents_wrap .container .contents_name_wrap .contents_names{
+    display: flex;
+    justify-content: center;
+}
 .container_wrap .section_contents_wrap .container .contents_name_wrap h3{
-    font-size: 1.7rem;
     font-weight: 700;
     
     padding: 20px;
     
+
+}
+.container_wrap .section_contents_wrap .container .contents_name_wrap h3 a{
+    color: #d3d3d3;
+
+    font-weight: 700;
+    font-size: 1.5rem;
+
+    transition: 0.5s;
+}
+.container_wrap .section_contents_wrap .container .contents_name_wrap h3 a.active{
+    color: #000;
+
+    font-weight: 700;
+    font-size: 1.7rem;
 }
 .container_wrap .section_contents_wrap .container .contents_name_wrap p{
     border-bottom: 1px solid #d3d3d3;
@@ -42,7 +64,12 @@
 
 /* 컨텐츠 */
 .container_wrap .section_contents_wrap .container .contents_wrap{
-    width: 90%;
+    position: relative;
+    left: 25%;
+
+    width: 200%;
+
+    transform: translateX(-11%);
 
     margin: 0 auto;
     margin-top: 30px;
@@ -53,9 +80,7 @@
 
 
     display: flex;
-    justify-content: space-between;
-
-    
+    justify-content: center;
 }
 
 .container_wrap .section_contents_wrap .container .contents_wrap .contents_list{
@@ -63,16 +88,39 @@
 
     width: 100%;
 }
+.container_wrap .section_contents_wrap .container .contents_wrap .contents_list:nth-child(1){
+    position: relative;
+
+    margin-right: 5%;
+
+    width: 100%;
+}
 .container_wrap .section_contents_wrap .container .contents_wrap .contents_list .contents_item{
 
 }
+/* 전공버튼 */
 .container_wrap .section_contents_wrap .container .contents_wrap .contents_list .contents_item a{
-    border: 1px solid;
+    padding: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 
     display: block;
     width: 50%;
 
     text-align: center;
+
+    background: #00b3b9;
+    color: #fff;
+
+    transition: 0.2s;
+
+    box-shadow: inset 0 0 2px #000;
+}
+.container_wrap .section_contents_wrap .container .contents_wrap .contents_list .contents_item.active a{
+    background: transparent;
+    color: #000;
+
+    box-shadow: 0 0 2px #000;
 }
 .container_wrap .section_contents_wrap .container .contents_wrap .contents_list .contents_item:nth-child(2) a{
     position: absolute;
@@ -81,6 +129,7 @@
 
 }
 
+/* 전공 교육과정표 */
 .container_wrap .section_contents_wrap .container .contents_wrap .contents_list .contents_item table{
     width: 100%;
     border-collapse: collapse;
@@ -95,6 +144,8 @@
 .container_wrap .section_contents_wrap .container .contents_wrap .contents_list .contents_item table th,
 .container_wrap .section_contents_wrap .container .contents_wrap .contents_list .contents_item table td{
     text-align: center;
+
+    padding: 3px;
     border: 1px solid;
 }
 
@@ -108,4 +159,89 @@
 .container_wrap .section_contents_wrap .container .contents_wrap .contents_list .contents_item table tbody .grade,
 .container_wrap .section_contents_wrap .container .contents_wrap .contents_list .contents_item table tbody .score{
     vertical-align:middle;
+}
+
+
+
+/* 교과목 소개 */
+.contents_intro{
+    border: 1px solid;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.contents_intro>li{
+    position: relative;
+
+    overflow: hidden;
+    box-shadow: 0 0 1px #000;
+}
+.contents_intro>li>ul{
+    position: absolute;
+    transition: 0.5s;
+}
+.contents_intro>li.active>ul{
+    position: relative;
+}
+.contents_intro>li h4{
+    text-align: center;
+
+    font-size: 1.4rem;
+
+    padding: 10px;
+
+    
+}
+.contents_intro>li.active h4{
+    background: #00b3b9;
+}
+.contents_intro>li.active h4 a{
+    color: #fff;
+}
+
+.contents_intro>li>ul>li{
+    margin-bottom: 10px;
+}
+.contents_intro>li>ul>li p{
+    font-size: 0.8em;
+    font-weight: 400;
+}
+.contents_intro>li h5{
+    position: relative;
+}
+.contents_intro>li h5::before{
+    content: url(../../../assets/images/curriculum/btn_dot.png);
+    
+    margin-right: 10px;
+}
+
+@media screen and (max-width:1050px) {
+    /* 컨텐츠 묶음 */
+    .container_wrap .section_contents_wrap{
+        padding: 10px;
+        margin: auto;
+
+        width: 100%;
+
+        display: flex;
+        justify-content: center;
+    }
+
+    /* 컨텐츠 */
+    .container_wrap .section_contents_wrap .container .contents_wrap{
+        width: 200%;
+
+        margin: 0 auto;
+        margin-top: 30px;
+
+        line-height: 25px;
+
+        transition: 0.5s;
+
+
+        display: flex;
+        justify-content: space-between;
+
+        
+    }
+
 }

@@ -136,6 +136,8 @@
     
     .footer .footer_contents_wrap{
         width: 100%;
+
+        padding: 10px;
     }
 
     /* 로고 */

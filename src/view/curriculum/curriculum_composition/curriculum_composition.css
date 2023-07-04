@@ -1,0 +1,115 @@
+
+/* 경로 */
+.container_wrap .path_wrap{
+
+    padding: 10px;
+
+    font-weight: 500;
+
+    border-bottom: 1px solid #d3d3d3;
+}
+
+.container_wrap .section_contents_wrap{
+    width: 100%;
+}
+.container_wrap .section_contents_wrap .container{
+    width: 100%;
+    max-width: 1050px;
+
+    margin: auto;
+}
+
+/* 교육과정구성 */
+.container_wrap .section_contents_wrap .container .contents_name_wrap{
+    width: 100%;
+
+    border-bottom: 1px solid #808080;
+
+    text-align: center;
+}
+.container_wrap .section_contents_wrap .container .contents_name_wrap h3{
+    font-size: 1.7rem;
+
+    padding: 10px;
+    margin-top: 20px;
+}
+.container_wrap .section_contents_wrap .container .contents_name_wrap p{
+    font-size: 0.9rem;
+    font-weight: 400;
+
+    padding: 10px;
+    padding-bottom: 30px;
+}
+
+/* 기초, 심화 */
+.container_wrap .section_contents_wrap .container .contents_wrap{
+    width: 100%;
+}
+
+.container_wrap .section_contents_wrap .container .contents_wrap .text_contents{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+
+    margin-top: 30px;
+}
+.container_wrap .section_contents_wrap .container .contents_wrap .text_contents>div{
+    position: relative;
+
+    min-width: 250px;
+    width: 45%;
+}
+.container_wrap .section_contents_wrap .container .contents_wrap .text_contents>div:nth-child(1)::before{
+    position: absolute;
+    top: -15px;
+    left: 0;
+
+    content: '';
+
+    width: 100%;
+    height: 100%;
+
+    border-right: 1px solid #d3d3d3;
+}
+.container_wrap .section_contents_wrap .container .contents_wrap .text_contents>div h4{
+    max-width: 200px;
+    width: 100%;
+
+    background: #008D91;
+    color: #fff;
+
+    text-align: center;
+
+    margin: auto;
+    border-radius: 50px;
+    border: 1px solid;
+    padding: 10px;
+}
+.container_wrap .section_contents_wrap .container .contents_wrap .text_contents>div>ul{
+    list-style: disc;
+}
+.container_wrap .section_contents_wrap .container .contents_wrap .text_contents>div>ul li{
+    margin: 20px 0;
+
+    font-weight: 400;
+}
+
+/* 교과과정 구성 이미지 */
+.container_wrap .section_contents_wrap .container .contents_wrap .img_contents{
+    width: 100%;
+
+    border-top: 1px solid #808080;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.container_wrap .section_contents_wrap .container .contents_wrap .img_contents img{ 
+    width: 100%;
+}
+@media screen and (max-width:546px) {
+    .container_wrap .section_contents_wrap .container .contents_wrap .text_contents>div:nth-child(1)::before{
+        height: 110%;
+        border: 0;
+        border-bottom: 1px solid #d3d3d3;
+    }
+}

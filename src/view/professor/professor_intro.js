@@ -90,7 +90,6 @@ function Img_move(){
         move_photo_wrap.style.transform='translateX(0)';
     })
 
-    if(window_width<1050){
         prev_btn.addEventListener('click',()=>{
             if(count>0 && window_width<1050){
                 accumulate_width+=li_width;
@@ -106,5 +105,4 @@ function Img_move(){
                 count++;
             }
         })
-    }
 }
