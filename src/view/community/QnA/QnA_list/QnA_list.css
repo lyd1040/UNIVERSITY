@@ -77,6 +77,9 @@
 }
 .container_wrap .section_contents_wrap .container .contents_wrap .contents table tbody th{
     font-weight: 100;
+
+    padding: 5px 0;
+    border-bottom: 1px solid #d3d3d3;
 }
 .container_wrap .section_contents_wrap .container .contents_wrap .contents table tbody th a{
     font-weight: 100;
