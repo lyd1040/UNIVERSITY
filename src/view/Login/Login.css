@@ -1,0 +1,157 @@
+main{
+    width: 100%;
+}
+/* 컨텐츠 묶음 */
+main .bg_left{
+    position: absolute;
+    top: 70px;
+    left: 0;
+    display: block;
+    width: 50vw;
+    height: calc(100vh - (70px + 140px));
+
+    background: #0B4085;
+
+    z-index: -1;
+}
+main .bg_right{
+    position: absolute;
+    top: 70px;
+    right: 0;
+    display: block;
+    width: 50vw;
+    height: calc(100vh - (70px + 140px));
+
+    background: #0C4DA2;
+
+    z-index: -1;
+}
+.container_wrap .section_contents_wrap{
+    padding: 10px;
+    margin: 0 auto;
+
+    height: calc(100vh - (70px + 140px)); /* 100%  - 헤더높이 + 푸터높이 */
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 관리자 로그인 텍스트 */
+.container_wrap .section_contents_wrap h2{
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+
+    font-size: 1.2em;
+
+    color: #fff;
+}
+
+.container_wrap .section_contents_wrap .img_box{
+    position: relative;
+
+    border: 1px solid;
+    border-right: 0;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    padding-top: 6px;
+
+    transition: 0.5s;
+
+    background: #0B4085;
+    box-shadow: inset -1px 0 5px #000;
+
+    z-index: -1;
+}
+.container_wrap .section_contents_wrap .img_box img{
+    width: 100%;
+}
+.container_wrap .section_contents_wrap .login-form{
+    width: 320px; 
+
+    padding: 0 10px;
+    padding-bottom: 20px;
+    border: 1px solid;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+
+    background: #0C4DA2;
+
+    font-size: 0.8em;
+
+    transition: 0.5s;
+}
+.login_wrap{
+    width: 100%;
+
+    text-align: center;
+}
+
+
+/* 아이디, 비밀번호 입력 */
+.login_wrap .form>div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin: 20px 0;
+
+    color: #fff;
+}
+.login_wrap .form>div input{
+    background: #0B4085;
+    color: #fff;
+
+    padding: 5px;
+    border: 0;
+    border-bottom: 2px solid #fff;
+}
+
+.login_wrap .form .login-btn{
+    width: 50%;
+
+    border: 0;
+    padding: 10px 10px;
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    background: #008D91;
+    color: #fff;
+}
+
+@media screen and (max-width:1050px) {
+    main{
+        min-width: 100%;
+        height: calc(100% - (70px + 100px)); /* 100%  - 헤더높이 + 푸터높이 */
+    }
+    .container_wrap .section_contents_wrap .container .contents_wrap{
+        
+        width: 100%;
+
+        border: 1px solid;
+        
+    }
+    .container_wrap .section_contents_wrap .container .contents_wrap h4{
+        border-radius: 50px;
+    }
+    .container_wrap .section_contents_wrap .login-form{
+        border-radius: 0;
+    }
+    
+}
+@media screen and (max-width:700px) {
+    /* 이미지 */
+    .container_wrap .section_contents_wrap .img_box{
+        position: absolute;
+        left: 0;
+        border: 0;
+
+        transform: translateX(25%);
+        opacity: 0;
+        
+        
+    }
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../../style/reset.css">
+
+    <link rel="stylesheet" href="../../style/header.css">
+    <link rel="stylesheet" href="../../style/footer.css">
+
+    <link rel="stylesheet" href="Login.css">
+
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="../../script/firebase.js"></script>
+    <script src="../Login/login.js"></script>
+    <title>Login</title>
+</head>
+<body>
+    <header class="header" id="header"></header>
+    <main class="main" id="main">
+        <section class="container_wrap">
+            <div class="section_contents_wrap">
+                <div class="img_box">
+                    <img src="../../assets/images/Login/login_bg.png" alt="">
+                </div>
+                <div id="login-form" class="login-form">
+                    <div class="login_wrap">
+                        <h2>관리자 로그인</h2>
+                        <div class="form">
+                            <div>
+                                <label for="email-input">관리자 아이디:</label>
+                                <input type="email" id="email-input" placeholder="Email">
+                            </div>
+
+                            <div>
+                                <label for="password-input">관리자 비밀번호:</label>
+                                <input type="password" id="password-input" placeholder="Password">
+                            </div>
+                            <button id="login-btn" class="login-btn">Login</button>
+                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+    <footer class="footer" id="footer"></footer>
+
+    <script src="../../script/header_footer_call.js"></script>
+    <script src="login.js"></script>
+</body>
+</html>

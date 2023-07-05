@@ -15,8 +15,10 @@ const headerFooterExec = () => {
 };
 
 const headerFooterPrint = async () => {
+  
   const headerData = await getHeader();
   const footerData = await getFooter();
+
   headerId.innerHTML = headerData;
   footerId.innerHTML = footerData;
 };

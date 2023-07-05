@@ -3,9 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../../../../style/reset.css">
+    <link rel="manifest" href="../../../../manifest.json">
+
+    <link rel="stylesheet" href="../../../../style/header.css">
+    <link rel="stylesheet" href="../../../../style/footer.css">
+
+    <link rel="stylesheet" href="../../../../style/not_index_banner.css">
+    <link rel="stylesheet" href="QnA_write.css">
+    <link rel="stylesheet" href="modal.css">
+
+    <script src="QnA-write.js"></script>
+    <title>Q&A 글작성</title>
 </head>
 <body>
+    <div id="wrap">
+        <header class="header" id="header"></header>
+        <main class="main" id="main">
+            <section class="banner" id="banner"></section>
+
+            <section class="container_wrap">
+                <div class="path_wrap">
+                    <div class="path">
+                        <a href="#none">HOME</a> > 
+                        <a href="#none">커뮤니티</a> > 
+                        <a href="#none">Q&A</a>
+                    </div>
+                </div>
     
+                <div class="section_contents_wrap">
+                    <div class="container">
+                        <h3 class="contents_name">Q&A</h3>
+
+                        <div class="contents_wrap">
+                            <div class="contents">
+                                <form action="" method="get" name="Q&A_write_board">
+                                    <div>
+                                        <label for="QnA_title" class="QnA_title_txt">제목</label>
+                                        <input type="text" id="QnA_title">
+                                    </div>
+
+                                    <div>
+                                        <label for="QnA_content" class="QnA_content_txt">내용</label>
+                                        <textarea name="" id="QnA_content" style="resize:none;" rows="15"></textarea>
+                                    </div>
+
+                                    <div class="show_modal_btn_wrap">
+                                        <button type="button" class="goback">이전</button>
+                                        <button type="button" class="upload">등록</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="footer" id="footer"></footer>
+    </div>
+    <div id="modal" class="screen_out">
+        <div class="modal_box">
+            <div class="modal_contents_center">
+                <p>글을 수정할 시 입력한 비밀번호가 필요합니다.</p>
+
+                <form action="">
+                    <div>
+                        <label for="writer">작성자: </label>
+                        <input type="text" id="writer" placeholder="작성자">
+                    </div>
+                    <div>
+                        <label for="pw">비밀번호: </label>
+                        <input type="text" id="pw" placeholder="비밀번호">
+                    </div>
+
+                    <div class="modal_btn_wrap">
+                        <button type="button" id="hide_modal">취소</button>
+                        <button type="submit" id="list_upload">등록</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="../../../../script/header_footer_call.js"></script>
+    <script src="../../../../script/community/banner_call.js"></script>
 </body>
 </html>

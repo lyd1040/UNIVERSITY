@@ -46,7 +46,6 @@
     transition: 0.5s;
 }
 .container_wrap .section_contents_wrap .container .contents_wrap .contents{
-    position: relative;
     width: 100%;
 
     padding: 10px;
@@ -56,48 +55,72 @@
     justify-content: space-between;
     gap: 30px;
 }
-/* 검색버튼 */
 .container_wrap .section_contents_wrap .container .contents_wrap .contents form{
+
+    width: 100%;
+
     display: flex;
-    align-items: center;
-    justify-content: end;
-    flex-wrap: wrap;
+    flex-direction: column;
 }
-/* 리스트 */
-.container_wrap .section_contents_wrap .container .contents_wrap .contents table{
-    border-collapse: collapse;   
+.container_wrap .section_contents_wrap .container .contents_wrap .contents form>div{
+    position: relative;
+
+    margin-top: 20px;
 }
 
-.container_wrap .section_contents_wrap .container .contents_wrap .contents table th,
-.container_wrap .section_contents_wrap .container .contents_wrap .contents table td{
-    border: 1px solid;
-}
-.container_wrap .section_contents_wrap .container .contents_wrap .contents table thead th{
-    background: #d3d3d3;
-}
-.container_wrap .section_contents_wrap .container .contents_wrap .contents table tbody th{
-    font-weight: 100;
-}
-.container_wrap .section_contents_wrap .container .contents_wrap .contents table tbody th a{
-    font-weight: 100;
-}
-/* 페이징 */
-.container_wrap .section_contents_wrap .container .contents_wrap .contents .paging{
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-/* 글쓰기 버튼 */
-.container_wrap .section_contents_wrap .container .contents_wrap .contents .write_btn{
-    display: flex;
-    justify-content: end;
-}
-.container_wrap .section_contents_wrap .container .contents_wrap .contents .write_btn a{
-    display: block;
+/* 글 작성 */
+.container_wrap .section_contents_wrap .container .contents_wrap .contents form>div label{
+    position: absolute;
+    left: 10px;
 
-    padding: 0px 10px;
-    border-radius: 5px;
-    border: 1px solid;
+    transform: translateY(30%);
+
+    font-size: 1em;
+    
+    color: #808080;
+
+    transition: 0.3s;
+}
+.container_wrap .section_contents_wrap .container .contents_wrap .contents form>div label.active{
+    position: absolute;
+    left: 10px;
+
+    background: #fff;
+    color: #000;
+
+    transform: translateY(-50%);
+    font-size: 0.8em;
+}
+.container_wrap .section_contents_wrap .container .contents_wrap .contents form>div input{
+    width: 100%;
+    height: 30px;
+
+    padding: 5px 0;
+}
+.container_wrap .section_contents_wrap .container .contents_wrap .contents form>div textarea{
+    width: 100%;
+    padding: 15px 0;
+}
+
+/* 등록 이전 버튼 */
+.container_wrap .section_contents_wrap .container .contents_wrap .contents form .show_modal_btn_wrap{
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+}
+.container_wrap .section_contents_wrap .container .contents_wrap .contents form .show_modal_btn_wrap button{
+    padding: 7px 20px;
+    border: 0;
+    border-radius: 3px;
+
+    color: #fff;
+    background: #008D91;
+
+    cursor: pointer;
+}
+.container_wrap .section_contents_wrap .container .contents_wrap .contents form .show_modal_btn_wrap button:hover{
+    background: #F7AA01;
 }
 @media screen and (max-width:1050px) {
     #modal .modal_box{

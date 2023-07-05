@@ -1,6 +1,29 @@
 
 show_hide_header();
+login_logout();
+LogOutEvt();
+function login_logout(){
+    let loginBtn = document.querySelector('.loginBtn');
+    let logoutBtn = document.querySelector('.logoutBtn');
 
+        loginBtn.classList.remove('screen_out');
+        logoutBtn.classList.remove('screen_out');
+
+        if(sessionStorage.getItem('admin-uid')){
+            loginBtn.classList.add('screen_out');
+        }else{
+            logoutBtn.classList.add('screen_out');
+        }
+}
+
+function LogOutEvt(){
+    let logoutBtn = document.querySelector('.logoutBtn');
+    
+    logoutBtn.addEventListener('click',()=>{
+        sessionStorage.removeItem('admin-uid');
+        location.reload();
+    })
+}
 
 function show_hide_header(){
     let gnb_contents_name = document.querySelectorAll('.gnb_contents_name');
