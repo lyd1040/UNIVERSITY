@@ -20,7 +20,7 @@ function firebaseauthentication(){
         } else {
           console.log("No user is currently logged in.");
         }
-        window.location.href = '../main/index.html'; // home.html로 이동
+        history.back();
         })
         
         .catch(function(error) {

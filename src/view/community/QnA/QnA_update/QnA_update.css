@@ -40,7 +40,6 @@
 
     margin: 0 auto;
     margin-top: 30px;
-    border: 1px solid;
 
     line-height: 25px;
 
@@ -62,27 +61,66 @@
 
     display: flex;
     flex-direction: column;
-    gap: 30px;
 }
 .container_wrap .section_contents_wrap .container .contents_wrap .contents form>div{
+    position: relative;
+
+    margin-top: 20px;
+}
+
+/* 글 작성 */
+.container_wrap .section_contents_wrap .container .contents_wrap .contents form>div label{
+    position: absolute;
+    left: 10px;
+
+    transform: translateY(30%);
+
+    font-size: 1em;
+    
+    color: #808080;
+
+    transition: 0.3s;
+}
+.container_wrap .section_contents_wrap .container .contents_wrap .contents form>div label.active{
+    position: absolute;
+    left: 10px;
+
+    background: #fff;
+    color: #000;
+
+    transform: translateY(-50%);
+    font-size: 0.8em;
+}
+.container_wrap .section_contents_wrap .container .contents_wrap .contents form>div input{
     width: 100%;
-    border: 1px solid #808080;
-    border-radius: 2px;
+    height: 30px;
 
-    display: flex;
+    padding: 5px 0;
 }
-.container_wrap .section_contents_wrap .container .contents_wrap .contents form>div:nth-child(2){
-    height: 300px;
+.container_wrap .section_contents_wrap .container .contents_wrap .contents form>div textarea{
+    width: 100%;
+    padding: 15px 0;
 }
 
-/* 수정 이전 버튼 */
+/* 등록 이전 버튼 */
 .container_wrap .section_contents_wrap .container .contents_wrap .contents form .show_modal_btn_wrap{
     width: 100%;
 
-    border: 0;
-
     display: flex;
     justify-content: space-between;
+}
+.container_wrap .section_contents_wrap .container .contents_wrap .contents form .show_modal_btn_wrap button{
+    padding: 7px 20px;
+    border: 0;
+    border-radius: 3px;
+
+    color: #fff;
+    background: #008D91;
+
+    cursor: pointer;
+}
+.container_wrap .section_contents_wrap .container .contents_wrap .contents form .show_modal_btn_wrap button:hover{
+    background: #F7AA01;
 }
 @media screen and (max-width:1050px) {
     #modal .modal_box{

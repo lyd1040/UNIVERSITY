@@ -12,6 +12,9 @@
 
     <link rel="stylesheet" href="../../../../style/not_index_banner.css">
     <link rel="stylesheet" href="QnA_read.css">
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
     <title>Q&A</title>
 </head>
 <body>
@@ -36,24 +39,23 @@
                         <div class="contents">
                             <form action="" method="get" name="Q&A_write_board">
                                 <div>
-                                    <p>제목 : <span></span></p>
+                                    <p class="QnA_title">제목 : </p>
                                 </div>
 
                                 <div>
-                                    <p>내용: <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores consequuntur adipisci natus accusantium necessitatibus ducimus deleniti cum ipsa, dolorum quo, voluptatum sequi a atque. Quo reprehenderit omnis saepe iste similique.</span></p>
+                                    <p class="QnA_content">내용: </p>
                                 </div>
 
                                 <div class="answer">
-                                    <p>답변 : <span></span></p>
+                                    <p class="QnA_answer">답변 : </p>
                                 </div>
 
                                 <div class="show_modal_btn_wrap">
                                     <button type="button">이전</button>
-                                    <button type="button">수정</button>
+                                    <button type="button" class="answerBtn" style="display: none;">답변</button>
+                                    <button type="button" class="updateBtn">수정</button>
                                 </div>
                             </form>
-
-                            
                         </div>
                     </div>
                 </div>
@@ -65,5 +67,7 @@
 
     <script src="../../../../script/header_footer_call.js"></script>
     <script src="../../../../script/community/banner_call.js"></script>
+    <script src="../../../../script/firebase.js"></script>
+    <script src="QnA_read.js"></script>
 </body>
 </html>

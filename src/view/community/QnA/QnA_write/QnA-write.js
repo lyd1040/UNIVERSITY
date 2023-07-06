@@ -57,28 +57,35 @@ async function firebase_upload(){
     const QnA_content_input = document.getElementById("QnA_content");
 
 
-    let idx = await getNumberOfData();
+    let idx = await getNumberOfData()+1;
     let writer = writer_input.value;
     let pw = pw_input.value;
     let QnA_title = QnA_title_input.value;
     let QnA_content = QnA_content_input.value;
+    let answer = '';
+    let see_content_count=0;
+
+    console.log(idx);
 
     // Firebase Realtime Database에 데이터 추가
     const database = firebase.database();
-    const ref = database.ref("users");
+    const ref = database.ref("contents");
+    const today_date = today_date_return();
     let data = {
         idx,
         writer,
         pw,
         QnA_title,
         QnA_content,
+        answer,
+        today_date,
+        see_content_count
     };
 
-    console.log(data);
     ref.push(data)
     .then(function() {
         // 성공 메시지 출력 후 폼 초기화
-        console.log("데이터가 성공적으로 추가되었습니다.");
+        location.href = "../QnA_list/QnA_list.html";
     })
     .catch(function(error) {
         
@@ -86,12 +93,29 @@ async function firebase_upload(){
     });
 }
 
+/* 오늘 날짜 */
+function today_date_return(){
+    const today_date = new Date();
+    const now_year = today_date.getFullYear();
+    let now_month = today_date.getMonth()+1;
+    let now_date = today_date.getDate();
+
+    if(now_month<10){
+        now_month='0'+now_month;
+    }
+
+    if(now_date<10){
+        now_date='0'+now_date;
+    }
+
+    return now_year+'-'+now_month+'-'+now_date;
+}
 
 // Firebase Realtime Database에서 데이터 개수 가져오기
 function getNumberOfData() {
     return new Promise((resolve, reject) => {
         const database = firebase.database();
-        const ref = database.ref("users");
+        const ref = database.ref("contents");
         ref.once("value")
           .then(function(snapshot) {
             const numberOfData = snapshot.numChildren();

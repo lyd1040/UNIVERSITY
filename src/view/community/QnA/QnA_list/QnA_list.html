@@ -13,177 +13,86 @@
 
     <link rel="stylesheet" href="../../../../style/not_index_banner.css">
     <link rel="stylesheet" href="QnA_list.css">
+
+    
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script src="QnA_list.js"></script>
     <title>Q&A</title>
 </head>
 <body>
-    <header id="header" class="header"></header>
-    <main id="main" class="main">
-        <section class="banner" id="banner"></section>
+    <div class="all_wrap" style="display: none;" id="all_wrap">
+        <header id="header" class="header"></header>
+        <main id="main" class="main">
+            <section class="banner" id="banner"></section>
 
-        <section class="container_wrap">
-            <div class="path_wrap">
-                <div class="path">
-                    <a href="#none">HOME</a> > 
-                    <a href="#none">커뮤니티</a> > 
-                    <a href="#none">Q&A</a>
+            <section class="container_wrap">
+                <div class="path_wrap">
+                    <div class="path">
+                        <a href="#none">HOME</a> > 
+                        <a href="#none">커뮤니티</a> > 
+                        <a href="#none">Q&A</a>
+                    </div>
                 </div>
-            </div>
 
-            <div class="section_contents_wrap">
-                <div class="container">
-                    <h3 class="contents_name">Q&A</h3>
+                <div class="section_contents_wrap">
+                    <div class="container">
+                        <h3 class="contents_name">Q&A</h3>
 
-                    <div class="contents_wrap">
-                        <div class="contents">
-                            <form action="">
-                                <div>
-                                    <select name="" id="">
-                                        <a href="#none">
+                        <div class="contents_wrap">
+                            <div class="contents">
+                                <form action="">
+                                    <div>
+                                        <select name="search_kind" id="search_kind">
                                             <option value="제목">제목</option>
-                                        </a>
-                                        <option value="내용">내용</option>
-                                        <option value="작성자">작성자</option>
-                                    </select>
-                                </div>
-                                <div>
-                                    <label for=""></label>
-                                    <input for=""></input>
-                                </div>
-                                <button type="button">검색</button>
-                                
-                            </form>
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>번호</th>
-                                        <th><a href="#none">제목</a></th>
-                                        <th>작성자</th>
-                                        <th>등록일</th>
-                                        <th>조회수</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <th>1</th>
-                                        <th><a href="#none">제목</a></th>
-                                        <th>작성자</th>
-                                        <th>등록일</th>
-                                        <th>조회수</th>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <th>2</th>
-                                        <th><a href="#none">제목</a></th>
-                                        <th>작성자</th>
-                                        <th>등록일</th>
-                                        <th>조회수</th>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <th>3</th>
-                                        <th><a href="#none">제목</a></th>
-                                        <th>작성자</th>
-                                        <th>등록일</th>
-                                        <th>조회수</th>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <th>4</th>
-                                        <th><a href="#none">제목</a></th>
-                                        <th>작성자</th>
-                                        <th>등록일</th>
-                                        <th>조회수</th>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <th>5</th>
-                                        <th><a href="#none">제목</a></th>
-                                        <th>작성자</th>
-                                        <th>등록일</th>
-                                        <th>조회수</th>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <th>6</th>
-                                        <th><a href="#none">제목</a></th>
-                                        <th>작성자</th>
-                                        <th>등록일</th>
-                                        <th>조회수</th>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <th>7</th>
-                                        <th><a href="#none">제목</a></th>
-                                        <th>작성자</th>
-                                        <th>등록일</th>
-                                        <th>조회수</th>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <th>8</th>
-                                        <th><a href="#none">제목</a></th>
-                                        <th>작성자</th>
-                                        <th>등록일</th>
-                                        <th>조회수</th>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <th>9</th>
-                                        <th><a href="#none">제목</a></th>
-                                        <th>작성자</th>
-                                        <th>등록일</th>
-                                        <th>조회수</th>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <th>10</th>
-                                        <th><a href="#none">제목</a></th>
-                                        <th>작성자</th>
-                                        <th>등록일</th>
-                                        <th>조회수</th>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <th>11</th>
-                                        <th><a href="#none">제목</a></th>
-                                        <th>작성자</th>
-                                        <th>등록일</th>
-                                        <th>조회수</th>
-                                    </tr>
+                                            <option value="내용">내용</option>
+                                            <option value="작성자">작성자</option>
+                                        </select>
+                                    </div>
 
-                                </tbody>
-                            </table>
+                                    <div>
+                                        <label for="search" class="screen_out">검색</label>
+                                        <input type="text" id="search"></input>
+                                    </div>
 
-                            <div class="write_btn">
-                                <a href="#none">글쓰기</a>
-                            </div>
+                                    <button type="button" class="searchBtn">검색</button>
+                                    
+                                </form>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>번호</th>
+                                            <th><a href="#none">제목</a></th>
+                                            <th>작성자</th>
+                                            <th>등록일</th>
+                                            <th>조회수</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- 테이블 목록은 데이터베이스에서 들고오기 -->
+                                    </tbody>
+                                </table>
 
-                            <div class="paging">
-                                <div class="prev_wrap">
-                                    <a href="#none"><i class="fa-solid fa-angles-left"></i></a>
-                                    <a href="#none"><i class="fa-solid fa-chevron-left"></i></a>
+                                <div class="write_btn">
+                                    <a href="../QnA_write/QnA_write.html">글쓰기</a>
                                 </div>
-                                <div class="paging_btn_wrap">
-                                    <a href="#none">1</a>
-                                    <a href="#none">2</a>
-                                </div>
-                                <div class="next_wrap">
-                                    <a href="#none"><i class="fa-solid fa-chevron-right"></i></a>
-                                    <a href="#none"><i class="fa-solid fa-angles-right"></i></a>
+
+                                <div class="paging">
+                                    <div class="paging_btn_wrap">
+                                        <!-- 페이징 버튼 개수는 테이블 목록 개수에 따라 달라짐 -->
+                                    </div>
                                 </div>
                             </div>
-
-                            
-                            
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-    </main>
-    
-    <footer id="footer" class="footer"></footer>
+            </section>
+        </main>
+        
+        <footer id="footer" class="footer"></footer>
+    </div>
     <script src="../../../../script/header_footer_call.js"></script>
     <script src="../../../../script/community/banner_call.js"></script>
+    <script src="../../../../script/firebase.js"></script>
 </body>
 </html>
