@@ -99,9 +99,15 @@
 .container_wrap .section_contents_wrap .container .contents_wrap .contents .write_btn a{
     display: block;
 
-    padding: 0px 10px;
-    border-radius: 5px;
-    border: 1px solid;
+    padding: 7px 20px;
+    border: 0;
+    border-radius: 3px;
+
+    color: #fff;
+    background: #008D91;
+}
+.container_wrap .section_contents_wrap .container .contents_wrap .contents .write_btn a:hover{
+    background: #F7AA01;
 }
 @media screen and (max-width:1050px) {
     #modal .modal_box{

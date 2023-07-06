@@ -1,14 +1,8 @@
 window.onload=()=>{
     const idx = localStorage.getItem('idx');
-    localStorage.removeItem('idx');
     loading(idx);
 
-    window.addEventListener('beforeunload', (e)=>{
-        e.preventDefault();
-        console.log(idx);
-        localStorage.setItem('idx',idx);
-        return 0
-    }, false);
+    
 }
 
 
@@ -54,18 +48,15 @@ async function data_read(idx){
 
 function btn_cilck(childData, key_value, idx){
     let updateBtn = document.querySelector('.updateBtn');
+    let goBack = document.querySelector('.goBack');
 
-    
+        goBack.addEventListener('click',()=>{
+            history.back();
+        })
 
         //사용자는 수정
         updateBtn.addEventListener('click',()=>{
-            if(childData.answer === ''){
-                localStorage.setItem('key_value',key_value);
-                localStorage.setItem('idx',idx);
-                location.href="../QnA_update/QnA_update.html";
-            }else{
-                alert('답변이 달린 후에는 글을 수정할 수 없습니다.');
-            }
+            show_modal(childData, key_value, idx);
         });
 
         //관리자는 답변
@@ -76,6 +67,43 @@ function btn_cilck(childData, key_value, idx){
         })
 }
 
+//모달 화면출력
+function show_modal(childData, key_value, idx){
+    const modal = document.getElementById('modal');
+    const user_pw = document.getElementById('user_pw');
+    const check = document.getElementById('check');
+    
+
+    if(childData.answer === ''){
+        modal.classList.remove('screen_out');
+
+        check.addEventListener('click',()=>{
+            if(user_pw.value === childData.pw){
+                localStorage.setItem('key_value',key_value);
+                localStorage.setItem('idx',idx);
+                location.href="../QnA_update/QnA_update.html";
+            }else{
+                alert('비밀번호가 틀렸습니다.');
+                return 0;
+            }
+        })
+        hide_modal();
+    }else{
+        alert('답변이 달린 후에는 글을 수정할 수 없습니다.');
+    }
+
+    
+}
+
+//모달창 숨기기
+function hide_modal() {
+    const hide_modal = document.getElementById('hide_modal');
+
+    hide_modal.addEventListener('click',() =>{
+        modal.classList.add('screen_out');
+    })
+    
+}
 
 /* 제목, 내용 붙여넣기 */
 function paste(childData){

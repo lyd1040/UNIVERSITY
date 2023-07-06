@@ -2,11 +2,14 @@ window.addEventListener('load',()=>{
     const this_key_value =localStorage.getItem('key_value');
     const temporary_date_localS_idx = localStorage.getItem('idx'); //임시로 read쪽 데이터 맡아두기
     localStorage.removeItem('key_value');
-    localStorage.removeItem('idx');
 
     loading(this_key_value, temporary_date_localS_idx)
     show_hide_answer(this_key_value, temporary_date_localS_idx)
 })
+
+window.addEventListener('beforeunload', (e)=>{
+    e.preventDefault();
+}, false);
 
 /* 관리자 */
 function show_hide_answer(this_key_value, idx){
@@ -40,10 +43,11 @@ function show_hide_answer(this_key_value, idx){
         }
     })
     if(sessionStorage.getItem("admin-uid")){
-        console.log('afdaf');
         QnA_title_input.setAttribute('readonly','readonly');
         QnA_content_input.setAttribute('readonly','readonly');
-        
+    }else{
+        document.querySelector('.QnA_answer_txt').style.display="none";
+        document.getElementById('QnA_answer').style.display="none";
     }
 }
 
@@ -76,11 +80,7 @@ async function testing_title_content(this_key_value, temporary_date_localS_idx){
                     firebase_update(ref, QnA_title_input, QnA_content_input, this_key_value ,temporary_date_localS_idx);
                 }
             }else{
-                if(confirm('작성중 나가시면 입력하신 데이터가 삭제됩니다.')){
-                    localStorage.setItem('idx',temporary_date_localS_idx);
-                    history.back();
-                }
-                
+                history.back();
             }
          })
     })

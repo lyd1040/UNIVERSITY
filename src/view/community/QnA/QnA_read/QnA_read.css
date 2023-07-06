@@ -31,7 +31,6 @@
     
     padding: 20px;
     border-bottom: 1px solid #d3d3d3;
-    
 }
 
 /* 컨텐츠 */
@@ -40,7 +39,6 @@
 
     margin: 0 auto;
     margin-top: 30px;
-    border: 1px solid;
 
     line-height: 25px;
 
@@ -62,7 +60,7 @@
 
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 10px;
 }
 .container_wrap .section_contents_wrap .container .contents_wrap .contents form>div{
     width: 100%;
@@ -71,11 +69,14 @@
 
     display: flex;
 }
+.container_wrap .section_contents_wrap .container .contents_wrap .contents form>div p{
+    padding: 5px;
+}
 .container_wrap .section_contents_wrap .container .contents_wrap .contents form>div:nth-child(2){
     height: 300px;
 }
 
-/* 수정 이전 버튼 */
+/* 수정 답변 이전 버튼 */
 .container_wrap .section_contents_wrap .container .contents_wrap .contents form .show_modal_btn_wrap{
     width: 100%;
 
@@ -83,6 +84,20 @@
 
     display: flex;
     justify-content: space-between;
+}
+
+.container_wrap .section_contents_wrap .container .contents_wrap .contents form .show_modal_btn_wrap button{
+    padding: 7px 20px;
+    border: 0;
+    border-radius: 3px;
+
+    color: #fff;
+    background: #008D91;
+
+    cursor: pointer;
+}
+.container_wrap .section_contents_wrap .container .contents_wrap .contents form .show_modal_btn_wrap button:hover{
+    background: #F7AA01;
 }
 @media screen and (max-width:1050px) {
     #modal .modal_box{
