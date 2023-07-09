@@ -1,8 +1,8 @@
-window.onload=()=>{
+window.addEventListener('load',()=>{
     banner_animation();
     first_contents();
     second_contents();
-}
+})
 
 //배너
 function banner_animation(){

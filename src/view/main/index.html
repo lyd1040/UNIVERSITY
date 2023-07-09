@@ -14,8 +14,8 @@
     <link rel="stylesheet" href="index_banner.css">
     <link rel="stylesheet" href="main_contents.css">
     
-    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
     <script src="../../script/firebase.js"></script>
     <script src="index.js"></script>
     <title>우석대학교-컴퓨터공학전공</title>
@@ -240,37 +240,20 @@
                         </h2>
 
                         <div class="notice_list_wrap">
-                            <ul class="notice_list">
-                                <li class="notice_list_item">
-                                    <div class="notice_label">
-                                        <a href="#none">공지1</a>
-                                    </div>
-
-                                    <div class="notice_contents">
-                                        <a href="#none">공지1 내용</a>
-                                    </div>
-                                </li>
-
-                                <li class="notice_list_item">
-                                    <div class="notice_label">
-                                        <a href="#none">공지2</a>
-                                    </div>
-
-                                    <div class="notice_contents">
-                                        <a href="#none">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem excepturi nemo ducimus, voluptatum at omnis unde porro, deserunt itaque praesentium alias natus quod atque nulla optio neque? Recusandae, voluptates sapiente?</a>
-                                    </div>
-                                </li>
-
-                                <li class="notice_list_item">
-                                    <div class="notice_label">
-                                        <a href="#none">공지3</a>
-                                    </div>
-
-                                    <div class="notice_contents">
-                                        <a href="#none">공지3 내용</a>
-                                    </div>
-                                </li>
-                            </ul>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>번호</th>
+                                        <th><a href="#none">제목</a></th>
+                                        <th>작성자</th>
+                                        <th>등록일</th>
+                                        <th>조회수</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- 테이블 목록은 데이터베이스에서 들고오기 -->
+                                </tbody>
+                            </table>
                         </div>
                     </div>
 
@@ -322,7 +305,8 @@
               console.log('Service Worker registration failed:', error);
             });
         }
-      </script>
+    </script>
     <script src="../../script/header_footer_call.js"></script>
+    <script src="main_notice.js"></script>
 </body>
 </html>

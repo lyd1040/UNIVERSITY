@@ -51,17 +51,19 @@
     margin-top: 10px;
 }
 .main_contents_container>section .select_specialty_intro_btn_wrap a{
-    border: 1px solid #000;
-    padding: 5px;
-    border-radius: 5px;
+    padding: 7px 20px;
+    border: 0;
+    border-radius: 3px;
 
     font-size: 0.8em;
-}
-.main_contents_container>section .select_specialty_intro_btn_wrap a:active{
-    border: 1px solid#fff;
 
-    background: #008D91;
     color: #fff;
+    background: #008D91;
+
+    cursor: pointer;
+}
+.main_contents_container>section .select_specialty_intro_btn_wrap a:hover{
+    background: #F7AA01;
 }
 
 /* 컨텐츠 본격 디자인 */
@@ -249,9 +251,14 @@
     margin: auto;
 
     width: 80%;
-
-    
 }
+.main_contents_container>section .notice_container .notice_list_wrap table{
+    border-collapse: collapse;
+}
+.main_contents_container>section .notice_container .notice_list_wrap table th{
+    border: 1px solid;
+}
+
 .main_contents_container>section .notice_container .notice_list_wrap ul{
     width: 100%;
 
