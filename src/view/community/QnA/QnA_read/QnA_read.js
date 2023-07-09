@@ -83,8 +83,8 @@ function show_modal(childData, key_value, idx){
                 localStorage.setItem('idx',idx);
                 location.href="../QnA_update/QnA_update.html";
             }else{
-                alert('비밀번호가 틀렸습니다.');
-                return 0;
+                const pw_same_check = document.querySelector('.pw_same_check');
+                pw_same_check.innerHTML="비밀번호가 다릅니다."
             }
         })
         hide_modal();

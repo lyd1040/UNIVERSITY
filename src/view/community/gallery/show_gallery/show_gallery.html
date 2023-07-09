@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../../../../style/reset.css">
+    <link rel="manifest" href="../../../../manifest.json">
+
+    <link rel="stylesheet" href="../../../../style/header.css">
+    <link rel="stylesheet" href="../../../../style/footer.css">
+    <link rel="stylesheet" href="modal.css">
+
+    <link rel="stylesheet" href="../../../../style/not_index_banner.css">
+    <link rel="stylesheet" href="show_gallery.css">
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    <script src="../../../../script/firebase.js"></script>
+    <title>커뮤니티</title>
+</head>
+<body>
+    <div class="all_wrap" id="wrap">
+        <header id="header" class="header"></header>
+        <main id="main" class="main">
+            <section class="banner" id="banner"></section>
+
+            <section class="container_wrap">
+                <div class="path_wrap">
+                    <div class="path">
+                        <a href="#none">HOME</a> > 
+                        <a href="#none">전공</a> > 
+                        <a href="#none">전공소개</a>
+                    </div>
+                </div>
+
+                <div class="section_contents_wrap">
+                    <div class="container">
+                        <h3>갤러리</h3>
+
+                        <div class="contents_wrap">
+                            <div class="contents">
+                                <ul class="img_wrap">
+                                   
+                                </ul>
+                            </div>
+                            
+                            <div class="pagingBtn">
+                            </div>
+
+                            <a href="../upload_img/upload_img.html">사진 업로드</a>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <footer id="footer" class="footer"></footer>
+    </div>
+
+    <div id="modal" class="screen_out">
+        <div class="modal_box">
+            <div class="modal_contents_center">
+                <div>
+                    <img src="" alt="">
+                </div>
+
+                <div class="modal_btn_wrap">
+                    <button type="button" id="hide_modal">X</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="../../../../script/header_footer_call.js"></script>
+    <script src="../../../../script/community/banner_call.js"></script>
+    <script src="show_gallery.js"></script>
+</body>
+</html>

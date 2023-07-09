@@ -11,15 +11,16 @@
     <link rel="stylesheet" href="../../../../style/footer.css">
 
     <link rel="stylesheet" href="../../../../style/not_index_banner.css">
-    <link rel="stylesheet" href="../QnA_write/modal.css">
-    <link rel="stylesheet" href="QnA_read.css">
+    <link rel="stylesheet" href="notice_write.css">
+    <link rel="stylesheet" href="modal.css">
 
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
-    <title>Q&A</title>
+    <script src="notice_write.js"></script>
+    <title>커뮤니티</title>
 </head>
 <body>
-    <div class="all_wrap">
+    <div id="wrap">
         <header class="header" id="header"></header>
         <main class="main" id="main">
             <section class="banner" id="banner"></section>
@@ -29,33 +30,30 @@
                     <div class="path">
                         <a href="#none">HOME</a> > 
                         <a href="#none">커뮤니티</a> > 
-                        <a href="#none">Q&A</a>
+                        <a href="#none">공지사항</a>
                     </div>
                 </div>
-
+    
                 <div class="section_contents_wrap">
                     <div class="container">
-                        <h3 class="contents_name">Q&A</h3>
+                        <h3 class="contents_name">공지사항</h3>
 
                         <div class="contents_wrap">
                             <div class="contents">
-                                <form action="" method="get" name="Q&A_write_board">
+                                <form action="" method="get" name="notice_write_board">
                                     <div>
-                                        <p class="QnA_title">제목 : </p>
+                                        <label for="notice_title" class="notice_title_txt">제목</label>
+                                        <input type="text" id="notice_title">
                                     </div>
 
                                     <div>
-                                        <p class="QnA_content">내용: </p>
-                                    </div>
-
-                                    <div class="answer">
-                                        <p class="QnA_answer">답변 : </p>
+                                        <label for="notice_content" class="notice_content_txt">내용</label>
+                                        <textarea name="" id="notice_content" style="resize:none;" rows="15"></textarea>
                                     </div>
 
                                     <div class="show_modal_btn_wrap">
-                                        <button type="button" class="goBack">이전</button>
-                                        <button type="button" class="answerBtn" style="display: none;">답변</button>
-                                        <button type="button" class="updateBtn">수정</button>
+                                        <button type="button" class="goback">이전</button>
+                                        <button type="button" class="upload">등록</button>
                                     </div>
                                 </form>
                             </div>
@@ -67,32 +65,9 @@
         <footer class="footer" id="footer"></footer>
     </div>
 
-    <div id="modal" class="screen_out">
-        <div class="modal_box">
-            <div class="modal_contents_center">
-                <p>글을 수정할 시 입력한 비밀번호가 필요합니다.</p>
-
-                <form action="">
-                    <div>
-                        <label for="user_pw">비밀번호: </label>
-                        <input type="password" id="user_pw" placeholder="비밀번호">
-                    </div>
-                    <div>
-                        <p class="pw_same_check"></p>
-                    </div>
-
-                    <div class="modal_btn_wrap">
-                        <button type="button" id="hide_modal">취소</button>
-                        <button type="button" id="check">확인</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
 
     <script src="../../../../script/header_footer_call.js"></script>
     <script src="../../../../script/community/banner_call.js"></script>
     <script src="../../../../script/firebase.js"></script>
-    <script src="QnA_read.js"></script>
 </body>
 </html>

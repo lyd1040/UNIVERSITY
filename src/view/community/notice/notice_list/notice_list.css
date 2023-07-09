@@ -1,4 +1,5 @@
 
+
 /**************본문시작****************/
 /* 경로 */
 .container_wrap .path_wrap{
@@ -8,6 +9,7 @@
     font-weight: 500;
 
     border-bottom: 1px solid #d3d3d3;
+    
 }
 
 /* 컨텐츠 묶음 */
@@ -30,6 +32,7 @@
     
     padding: 20px;
     border-bottom: 1px solid #d3d3d3;
+    
 }
 
 /* 컨텐츠 */
@@ -44,6 +47,7 @@
     transition: 0.5s;
 }
 .container_wrap .section_contents_wrap .container .contents_wrap .contents{
+    position: relative;
     width: 100%;
 
     padding: 10px;
@@ -53,51 +57,56 @@
     justify-content: space-between;
     gap: 30px;
 }
-
-/* 제목 내용 답변 입력 */
+/* 검색버튼 */
 .container_wrap .section_contents_wrap .container .contents_wrap .contents form{
-
-    width: 100%;
-
     display: flex;
-    flex-direction: column;
-    gap: 10px;
+    align-items: center;
+    justify-content: end;
+    flex-wrap: wrap;
 }
-.container_wrap .section_contents_wrap .container .contents_wrap .contents form>div{
-    width: 100%;
-    border: 1px solid #808080;
-    border-radius: 2px;
+/* 리스트 */
+.container_wrap .section_contents_wrap .container .contents_wrap .contents table{
+    border-collapse: collapse;   
+}
 
+.container_wrap .section_contents_wrap .container .contents_wrap .contents table th,
+.container_wrap .section_contents_wrap .container .contents_wrap .contents table td{
+    border: 1px solid;
+}
+.container_wrap .section_contents_wrap .container .contents_wrap .contents table thead th{
+    background: #d3d3d3;
+}
+.container_wrap .section_contents_wrap .container .contents_wrap .contents table tbody th{
+    font-weight: 100;
+
+    padding: 5px 0;
+    border-bottom: 1px solid #d3d3d3;
+}
+.container_wrap .section_contents_wrap .container .contents_wrap .contents table tbody th a{
+    font-weight: 100;
+}
+/* 페이징 */
+.container_wrap .section_contents_wrap .container .contents_wrap .contents .paging{
     display: flex;
+    justify-content: center;
+    gap: 20px;
 }
-.container_wrap .section_contents_wrap .container .contents_wrap .contents form>div p{
-    padding: 5px;
-}
-.container_wrap .section_contents_wrap .container .contents_wrap .contents form>div:nth-child(2){
-    height: 300px;
-}
-
-/* 수정 답변 이전 버튼 */
-.container_wrap .section_contents_wrap .container .contents_wrap .contents form .show_modal_btn_wrap{
-    width: 100%;
-
-    border: 0;
-
+/* 글쓰기 버튼 */
+.container_wrap .section_contents_wrap .container .contents_wrap .contents .write_btn{
     display: flex;
-    justify-content: space-between;
+    justify-content: end;
 }
+.container_wrap .section_contents_wrap .container .contents_wrap .contents .write_btn a{
+    display: block;
 
-.container_wrap .section_contents_wrap .container .contents_wrap .contents form .show_modal_btn_wrap button{
     padding: 7px 20px;
     border: 0;
     border-radius: 3px;
 
     color: #fff;
     background: #008D91;
-
-    cursor: pointer;
 }
-.container_wrap .section_contents_wrap .container .contents_wrap .contents form .show_modal_btn_wrap button:hover{
+.container_wrap .section_contents_wrap .container .contents_wrap .contents .write_btn a:hover{
     background: #F7AA01;
 }
 @media screen and (max-width:1050px) {

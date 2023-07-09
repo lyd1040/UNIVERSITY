@@ -1,0 +1,132 @@
+
+/* 경로 */
+.container_wrap .path_wrap{
+
+    padding: 10px;
+
+    font-weight: 500;
+
+    border-bottom: 1px solid #d3d3d3;
+}
+
+/* 컨텐츠 묶음 */
+.container_wrap .section_contents_wrap{
+    padding: 10px;
+    margin: auto;
+
+    width: 80%;
+}
+.container_wrap .section_contents_wrap .container h3{
+    width: 100%;
+
+    font-size: 1.7rem;
+    font-weight: 700;
+    
+    padding: 20px;
+    border-bottom: 1px solid #d3d3d3;
+    
+}
+
+/* 컨텐츠 */
+.container_wrap .section_contents_wrap .container .contents_wrap{
+    width: 80%;
+
+    margin: 0 auto;
+    margin-top: 30px;
+
+    line-height: 25px;
+
+    transition: 0.5s;
+}
+
+.container_wrap .section_contents_wrap .container .contents_wrap{
+    position: relative;
+
+    padding: 10px 0;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+}
+
+/* 컨텐츠 */
+.container_wrap .section_contents_wrap .container .contents_wrap .contents{
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+}
+.container_wrap .section_contents_wrap .container .contents_wrap .contents .img_wrap{
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.container_wrap .section_contents_wrap .container .contents_wrap .contents .img_wrap li{
+    width: 20%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container_wrap .section_contents_wrap .container .contents_wrap .contents .img_wrap li img{
+    width: 100%;
+}
+
+/* 페이징 버튼 */
+.container_wrap .section_contents_wrap .container .contents_wrap .pagingBtn{
+    display: flex;
+    justify-content: center;
+
+    border-top: 1px solid;
+    padding: 10px 0;
+
+    gap: 20px;
+}
+
+/* 사진 업로드 버튼 */
+.container_wrap .section_contents_wrap .container .contents_wrap>a{
+    position: absolute;
+    right: 3px;
+
+    transform: translateY(-100%);
+
+    background: #008D91;
+    color: #fff;
+
+    border-radius: 3px;
+    padding: 7px 10px;
+}
+.container_wrap .section_contents_wrap .container .contents_wrap>a:hover{
+    background: #F7AA01;
+}
+
+@media screen and (max-width:1050px) {
+    .container_wrap .section_contents_wrap .container .contents_wrap{
+        width: 100%;
+    }
+    .container_wrap .section_contents_wrap .container .contents_wrap h4{
+        border-radius: 50px;
+    }
+    .container_wrap .section_contents_wrap .container .contents_wrap .contents .img_wrap li{
+        width: auto;
+        min-width: 50%;
+    
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    /* 사진 업로드 버튼 */
+    .container_wrap .section_contents_wrap .container .contents_wrap>a{
+        position: static;
+
+        display: block;
+
+        border-radius: 0;
+
+        text-align: center;
+    }
+}

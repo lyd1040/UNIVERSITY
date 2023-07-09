@@ -1,0 +1,102 @@
+/* 모달 */
+#wrap{
+    position: relative;
+    z-index: 0;
+
+}
+#modal.screen_out{
+    display: none;
+}
+#modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    background: #00000077;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 1;
+}
+#modal .modal_box{
+    position: relative;
+
+    width: 50%;
+    height: 80%;
+
+    background-color: #fff;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+}
+#modal .modal_box .modal_contents_center{
+
+    width: 80%;
+    height: 80%;
+
+    background-color: #fff;
+
+    padding: 10px;
+
+    font-size: 1em;
+
+    border: 1px solid;
+    transition: 0.5s;
+}
+#modal .modal_box .modal_contents_center>div{
+    height: 80%;
+}
+
+/* 이미지 */
+#modal .modal_box .modal_contents_center>div:nth-child(1){
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+#modal .modal_box .modal_contents_center>div:nth-child(1) img{
+    width: 80%;
+
+    height: 100%;
+}
+
+
+/* 버튼 */
+#modal .modal_box .modal_contents_center>.modal_btn_wrap{
+    position: absolute;
+    top: -30px;
+    right: -30px;
+
+    width: 30px;
+    height: 30px;
+}
+#modal .modal_box .modal_contents_center>.modal_btn_wrap button{
+    width: 100%;
+    height: 100%;
+
+    background-color: transparent;
+    color: #fff;
+
+    font-size: 2rem;
+    border: 0;
+
+    cursor: pointer;
+}
+
+
+@media screen and (max-width:1050px) {
+    #modal .modal_box{
+        width: 80%;
+        height: 80%;
+    }
+
+    #modal .modal_box form{
+        width: 100%;
+    }
+}
