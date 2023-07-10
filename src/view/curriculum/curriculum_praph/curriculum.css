@@ -122,6 +122,9 @@
 
     box-shadow: 0 0 2px #000;
 }
+.container_wrap .section_contents_wrap .container .contents_wrap .contents_list .contents_item.active a:hover{
+    background: #f7a9015e;
+}
 .container_wrap .section_contents_wrap .container .contents_wrap .contents_list .contents_item:nth-child(2) a{
     position: absolute;
     top: 0;
@@ -191,6 +194,10 @@
 
     
 }
+.contents_intro>li h4:hover{
+    background: #f7a9015e;
+}
+
 .contents_intro>li.active h4{
     background: #00b3b9;
 }

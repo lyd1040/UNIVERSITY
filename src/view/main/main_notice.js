@@ -80,8 +80,6 @@ function add_table_list(childData_arr, tbody, childSnapshot_arr){
         tbody.appendChild(tbody_content);
     }
 
-    console.log(tbody);
-
     click_a(tbody, childSnapshot_arr);
 }
 

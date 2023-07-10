@@ -2,6 +2,10 @@
 show_hide_header();
 login_logout();
 LogOutEvt();
+//보류
+/* header_button_focus(); */
+
+//로그인 로그아웃 처리
 function login_logout(){
     let loginBtn = document.querySelector('.loginBtn');
     let logoutBtn = document.querySelector('.logoutBtn');
@@ -16,6 +20,7 @@ function login_logout(){
         }
 }
 
+//로그 아웃시 리로드
 function LogOutEvt(){
     let logoutBtn = document.querySelector('.logoutBtn');
     
@@ -25,13 +30,30 @@ function LogOutEvt(){
     })
 }
 
+/* 
+//포커스시 보류
+function header_button_focus(){
+    let header_all_btn =document.querySelectorAll('#header li');
+    header_all_btn.forEach(e=>{
+        console.log(e.children[0])
+        e.children[0].addEventListener('focus',e=>{
+            e.classList.add('active');
+        })
+        if(e.classList.contains('active')){
+            e.addEventListener('focusout',e=>{
+                e.classList.remove('active');
+            })
+        }
+    })
+} */
+
+//헤더 메뉴 숨기기, 보이기
 function show_hide_header(){
     let gnb_contents_name = document.querySelectorAll('.gnb_contents_name');
     let school_en_name = document.querySelector('.school_en_name');
     let gnb_show_hide_btn = document.querySelector('.show_hide_gnb_btn');
     let school_kr_name = document.querySelector('.school_kr_name');
     let gnb_container = document.querySelector('.gnb_container');
-    let logo_text_box_text = document.querySelectorAll('.logo_text_box a');
     let gnb = document.querySelectorAll('.gnb a');
 
     gnb_contents_name.forEach(e=>{
@@ -50,6 +72,9 @@ function show_hide_header(){
         })
     })
 
+    document.querySelector('main a').addEventListener('focus',()=>{
+        document.querySelector('.header_contents_right').classList.remove('active');
+    })
 
     gnb.forEach((el,idx) =>{
         el.addEventListener('focus',()=>{
