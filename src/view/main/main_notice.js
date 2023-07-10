@@ -8,23 +8,23 @@ function data_read(){
     const ref = database.ref("notice");
 
     let childData_arr =[];
-    
     // .once 데이터를 한번만 읽어옴 
     ref.once("value")
     .then(snapshot => {
         
         let tbody = document.querySelector('.notice_list_wrap>table>tbody');
         let childSnapshot_arr = [];
-        
         // tbody 내용 초기화
         tbody.innerHTML = ''; 
+        
         snapshot.forEach(childSnapshot=> {
             // 추가로 작업 수행
             childData_arr.push(childSnapshot.val());
             childSnapshot_arr.push(childSnapshot);
-            add_table_list(childData_arr, tbody, childSnapshot_arr);
+            if(childSnapshot_arr.length==3){
+                add_table_list(childData_arr, tbody, childSnapshot_arr);
+            }
         });
-
         
     })
     .catch(error => {
@@ -48,8 +48,7 @@ function add_table_list(childData_arr, tbody, childSnapshot_arr){
         //제목 링크 작성
         let notice_title_a = document.createElement('a');
         let notice_title_a_contents = document.createTextNode(childData_arr[x].notice_title);
-        notice_title_a.setAttribute('href','../notice_read/notice_read.html');
-
+        notice_title_a.setAttribute('href','../community/notice/notice_read/notice_read.html');
         // 작성자 작성
         let writer_th = document.createElement('th');
         let writer_th_contents = document.createTextNode(childData_arr[x].writer);
@@ -93,6 +92,7 @@ function click_a(tbody,childSnapshot_arr){
 
             const database = firebase.database();
             const ref = database.ref("notice");
+            
 
             let see_content_count = childSnapshot_arr[x].val().see_content_count+1;
             
@@ -102,10 +102,10 @@ function click_a(tbody,childSnapshot_arr){
             })
             .then(function() {
                 localStorage.setItem('notice_idx',tbody.children[x].cells[0].innerText);
-                location.href="../notice_read/notice_read.html";
+                location.href="../community/notice/notice_read/notice_read.html";
             })
             .catch(function(error) {
-            console.error("데이터 변경 중 오류가 발생했습니다.", error);
+                console.error("데이터 변경 중 오류가 발생했습니다.", error);
             });
 
             

@@ -6,7 +6,7 @@
         "laboratory":"테크노관 5408",
         "tel":"043-531-2882",
         "email":"ehcheon@woosuk.ac.kr",
-        "img":"/UNIVERSITY/src/assets/images/professor/professor_cheon.jpg",
+        "img":"/src/assets/images/professor/professor_cheon.jpg",
         "carrer_one":"2014.03~ 우석대학교 컴퓨터공학부 교수",
         "carrer_two":""
     },
@@ -17,7 +17,7 @@
         "laboratory":"테크노관 5403",
         "tel":"043-531-2886",
         "email":"jsha@woosuk.ac.kr",
-        "img":"/UNIVERSITY/src/assets/images/professor/professor_ha.jpg",
+        "img":"/src/assets/images/professor/professor_ha.jpg",
         "carrer_one":"2014.03~ 우석대학교 컴퓨터공학부 교수",
         "carrer_two":""
 
@@ -29,7 +29,7 @@
         "laboratory":"테크노관 5405",
         "tel":"043-531-2883",
         "email":"jong1007@woosuk.ac.kr",
-        "img":"/UNIVERSITY/src/assets/images/professor/professor_Lee.jpg",
+        "img":"/src/assets/images/professor/professor_Lee.jpg",
         "career_one":"2021.07~ 우석대학교 LINC3.0사업단 단장",
         "carrer_two":"1993.03~ 우석대학교 컴퓨터공학부 교수"
     },
@@ -40,7 +40,7 @@
         "laboratory":"테크노관 5404",
         "tel":"043-531-2887",
         "email":"yangy123@woosuk.ac.kr",
-        "img":"/UNIVERSITY/src/assets/images/professor/professor_yang.jpg",
+        "img":"/src/assets/images/professor/professor_yang.jpg",
         "carrer_one":"2014.03~ 우석대학교 컴퓨터공학부 교수",
         "carrer_two":""
     },
@@ -51,7 +51,7 @@
         "laboratory":"테크노관 5407",
         "tel":"043-531-2885",
         "email":"ydhan@woosuk.ac.kr",
-        "img":"/UNIVERSITY/src/assets/images/professor/professor_han.jpg",
+        "img":"/src/assets/images/professor/professor_han.jpg",
         "carrer_one":"2014.03~ 우석대학교 컴퓨터공학부 교수",
         "carrer_two":""
     },
@@ -62,7 +62,7 @@
         "laboratory":"테크노관 5406",
         "tel":"043-531-2888",
         "email":"yongkikim@woosuk.ac.kr",
-        "img":"/UNIVERSITY/src/assets/images/professor/professor_kim.jpg",
+        "img":"/src/assets/images/professor/professor_kim.jpg",
         "carrer_one":"2016.03~ 우석대학교 컴퓨터공학부 교수",
         "carrer_two":""
     },
@@ -73,7 +73,7 @@
         "laboratory":"",
         "tel":"043-531-2871",
         "email":"",
-        "img":"/UNIVERSITY/src/assets/images/professor/teaching_assistant_kim.jpg",
+        "img":"/src/assets/images/professor/teaching_assistant_kim.jpg",
         "carrer_one":"",
         "carrer_two":""
     }

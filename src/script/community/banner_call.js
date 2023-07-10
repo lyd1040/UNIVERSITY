@@ -16,7 +16,7 @@ const BannerPrint = async () => {
 };
 
 const getBanner = () => {
-  /* "/UNIVERSITY_moblie_pc_web_app/UNIVERSITY/src/view/header/header.html" */
-  const response = fetch("/UNIVERSITY/src/view/community/banner.html");
+  /* "_moblie_pc_web_app/src/view/header/header.html" */
+  const response = fetch("/src/view/community/banner.html");
   return response.then((res) => res.text());
 };

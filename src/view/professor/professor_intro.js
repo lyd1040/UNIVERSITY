@@ -41,7 +41,6 @@ function info_transfer(img, img_data){
     /* 경력바꾸기 */
     carrer_container.innerHTML='';
     for(let x=0; x<carrer_f.length; x++){
-        console.log(carrer_f);
         carrer_container.innerHTML+=`<li>${carrer_f[x]}</li>`;
     }
 
