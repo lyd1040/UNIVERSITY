@@ -3,17 +3,17 @@
     "short_name": "우석대학교",
     "icons": [
       {
-        "src": "/UNIVERSITY/src/assets/images/manifest/manifest_logo192x192.png",
+        "src": "/src/assets/images/manifest/manifest_logo192x192.png",
         "type": "image/png",
         "sizes": "192x192"
       },
       {
-        "src": "/UNIVERSITY/src/assets/images/manifest/manifest_logo512x512.png",
+        "src": "/src/assets/images/manifest/manifest_logo512x512.png",
         "type": "image/png",
         "sizes": "512x512"
       }
     ],
-    "start_url": "/UNIVERSITY/src/view/main/index.html",
+    "start_url": "/src/view/main/index.html",
     "display": "standalone",
     "background_color": "#FFFFFF",
     "theme_color": "#0061c580"

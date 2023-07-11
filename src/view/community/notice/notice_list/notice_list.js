@@ -2,6 +2,7 @@ window.addEventListener('load',()=>{
     load_window();
     hide_write();
 })
+
 async function load_window(){
     await data_read();
     await show_contents();
@@ -52,7 +53,16 @@ async function data_read(){
 
 
 //테이블 리스트 생성
-function add_table_list(childData_arr, tbody, snapshot, childSnapshot_arr){
+async function add_table_list(childData_arr, tbody, snapshot, childSnapshot_arr){
+    
+    await dom_connect(childData_arr,tbody)
+    await click_a(tbody, childSnapshot_arr);
+    await search(tbody, snapshot);
+    await paging(tbody);
+    await hide_loding();
+}
+
+async function dom_connect(childData_arr,tbody){
     // tbody 내용작성 
     for(let x=0; x<childData_arr.length; x++){
         let tbody_content = document.createElement('tr');
@@ -97,14 +107,18 @@ function add_table_list(childData_arr, tbody, snapshot, childSnapshot_arr){
         //tbody에 컨텐츠 연결
         tbody.appendChild(tbody_content);
     }
-
-    click_a(tbody, childSnapshot_arr);
-    search(tbody, snapshot);
-    paging(tbody);
 }
 
+//로딩 없애기
+async function hide_loding(){
+    const loding = document.getElementById('loding');
+
+    loding.style.display='none';
+    
+} 
+
 /* 검색 */
-function search(tbody, snapshot){
+async function search(tbody, snapshot){
     const searchBtn = document.querySelector('.searchBtn');
     const search_input = document.getElementById('search');
     const select_option = document.getElementById('search_kind');
@@ -147,7 +161,7 @@ function search(tbody, snapshot){
 //클릭시 해당 인덱스 로컬스토리지 저장, 조회수 상승
 //this_key_value, childData
 //childSnapshot_arr[].key, childSnapshot_arr[x].val()
-function click_a(tbody,childSnapshot_arr){
+async function click_a(tbody,childSnapshot_arr){
     for(let x=0; x<tbody.children.length; x++){
         tbody.children[x].cells[1].children[0].addEventListener('click',(event)=>{
             event.preventDefault();
@@ -229,7 +243,7 @@ function last_page_search(array, firist_list){
 }
 
 // 초기 페이징
-function paging(tbody){
+async function paging(tbody){
     const paging_btn_wrap = document.querySelector('.paging_btn_wrap');
     paging_btn_wrap.innerHTML='';
 

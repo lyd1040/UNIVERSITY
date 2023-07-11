@@ -44,59 +44,69 @@ async function data_read(){
 
 
 //테이블 리스트 생성
-function add_table_list(childData_arr, tbody, snapshot, childSnapshot_arr){
-    // tbody 내용작성 
-    for(let x=0; x<childData_arr.length; x++){
-        let tbody_content = document.createElement('tr');
-        tbody_content.setAttribute('style','display:none');
-        // 번호 작성
-        let idx_th = document.createElement('th');
-        let idx_th_contents = document.createTextNode(childData_arr[x].idx);
-        // 제목 작성
-        let QnA_title_th = document.createElement('th');
+async function add_table_list(childData_arr, tbody, snapshot, childSnapshot_arr){
+    await dom_connect(childData_arr,tbody)
+    await click_a(tbody, childSnapshot_arr);
+    await search(tbody, snapshot);
+    await paging(tbody);
+    await hide_loding();
+}
+async function dom_connect(childData_arr,tbody){
+// tbody 내용작성 
+for(let x=0; x<childData_arr.length; x++){
+    let tbody_content = document.createElement('tr');
+    tbody_content.setAttribute('style','display:none');
+    // 번호 작성
+    let idx_th = document.createElement('th');
+    let idx_th_contents = document.createTextNode(childData_arr[x].idx);
+    // 제목 작성
+    let QnA_title_th = document.createElement('th');
 
-        //제목 링크 작성
-        let QnA_title_a = document.createElement('a');
-        let QnA_title_a_contents = document.createTextNode(childData_arr[x].QnA_title);
-        QnA_title_a.setAttribute('href','../QnA_read/QnA_read.html');
+    //제목 링크 작성
+    let QnA_title_a = document.createElement('a');
+    let QnA_title_a_contents = document.createTextNode(childData_arr[x].QnA_title);
+    QnA_title_a.setAttribute('href','../QnA_read/QnA_read.html');
 
-        // 작성자 작성
-        let writer_th = document.createElement('th');
-        let writer_th_contents = document.createTextNode(childData_arr[x].writer);
-        // 등록일 작성
-        let today_date_th = document.createElement('th');
-        let today_date_th_contents = document.createTextNode(childData_arr[x].today_date);
-        // 조회수 작성
-        let see_content_count_th = document.createElement('th');
-        let see_content_count_th_contents = document.createTextNode(childData_arr[x].see_content_count);
+    // 작성자 작성
+    let writer_th = document.createElement('th');
+    let writer_th_contents = document.createTextNode(childData_arr[x].writer);
+    // 등록일 작성
+    let today_date_th = document.createElement('th');
+    let today_date_th_contents = document.createTextNode(childData_arr[x].today_date);
+    // 조회수 작성
+    let see_content_count_th = document.createElement('th');
+    let see_content_count_th_contents = document.createTextNode(childData_arr[x].see_content_count);
 
-        // 각각의 컨텐츠 연결
+    // 각각의 컨텐츠 연결
 
-        idx_th.appendChild(idx_th_contents);
-        QnA_title_th.appendChild(QnA_title_a);
-        QnA_title_a.appendChild(QnA_title_a_contents);
-        writer_th.appendChild(writer_th_contents);
-        today_date_th.appendChild(today_date_th_contents);
-        see_content_count_th.appendChild(see_content_count_th_contents);
+    idx_th.appendChild(idx_th_contents);
+    QnA_title_th.appendChild(QnA_title_a);
+    QnA_title_a.appendChild(QnA_title_a_contents);
+    writer_th.appendChild(writer_th_contents);
+    today_date_th.appendChild(today_date_th_contents);
+    see_content_count_th.appendChild(see_content_count_th_contents);
 
-        //tr에 컨텐츠 연결
-        tbody_content.appendChild(idx_th);
-        tbody_content.appendChild(QnA_title_th);
-        tbody_content.appendChild(writer_th);
-        tbody_content.appendChild(today_date_th);
-        tbody_content.appendChild(see_content_count_th);
+    //tr에 컨텐츠 연결
+    tbody_content.appendChild(idx_th);
+    tbody_content.appendChild(QnA_title_th);
+    tbody_content.appendChild(writer_th);
+    tbody_content.appendChild(today_date_th);
+    tbody_content.appendChild(see_content_count_th);
 
-        //tbody에 컨텐츠 연결
-        tbody.appendChild(tbody_content);
-    }
-
-    click_a(tbody, childSnapshot_arr);
-    search(tbody, snapshot);
-    paging(tbody);
+    //tbody에 컨텐츠 연결
+    tbody.appendChild(tbody_content);
+}
 }
 
+//로딩 없애기
+async function hide_loding(){
+    const loding = document.getElementById('loding');
+
+    loding.style.display='none';
+    
+} 
 /* 검색 */
-function search(tbody, snapshot){
+async function search(tbody, snapshot){
     const searchBtn = document.querySelector('.searchBtn');
     const search_input = document.getElementById('search');
     const select_option = document.getElementById('search_kind');
@@ -149,7 +159,7 @@ function search(tbody, snapshot){
 //클릭시 해당 인덱스 로컬스토리지 저장, 조회수 상승
 //this_key_value, childData
 //childSnapshot_arr[].key, childSnapshot_arr[x].val()
-function click_a(tbody,childSnapshot_arr){
+async function click_a(tbody,childSnapshot_arr){
     for(let x=0; x<tbody.children.length; x++){
         tbody.children[x].cells[1].children[0].addEventListener('click',(event)=>{
             event.preventDefault();
@@ -231,7 +241,7 @@ function last_page_search(array, firist_list){
 }
 
 // 초기 페이징
-function paging(tbody){
+async function paging(tbody){
     const paging_btn_wrap = document.querySelector('.paging_btn_wrap');
     paging_btn_wrap.innerHTML='';
 

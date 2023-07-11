@@ -41,7 +41,13 @@ async function img_load(){
     });
 }
 
-function imgDOM(img_arr){
+async function imgDOM(img_arr){
+   const img_wrap = await dom_connect(img_arr);
+    await pagingBtn(img_wrap);
+    click_a(img_wrap);
+    await hide_loding();
+}
+async function dom_connect(img_arr){
     const img_wrap = document.querySelector('.img_wrap');
     for(let x=0; x<img_arr.length; x++){
         //DOM생성
@@ -63,10 +69,9 @@ function imgDOM(img_arr){
         img_wrap.appendChild(img_wrap_li);
     }
 
-
-    pagingBtn(img_wrap);
-    click_a(img_wrap);
+    return img_wrap;
 }
+
 
 function click_a(img_wrap){
     for(let x=0; x<img_wrap.children.length; x++){
@@ -74,6 +79,12 @@ function click_a(img_wrap){
             show_modal(img_wrap.children[x].children[0]);
         })
     }
+}
+async function hide_loding(){
+    const loding = document.getElementById('loding');
+
+    setTimeout(()=>{loding.style.display='none';},1500  );
+    
 }
 
 //모달 화면에 띄우기
@@ -99,7 +110,7 @@ function hide_modal(modal){
 }
 
 // 초기 페이징
-function pagingBtn(img_wrap){
+async function pagingBtn(img_wrap){
 
     const paging_btn_wrap = document.querySelector('.pagingBtn');
     paging_btn_wrap.innerHTML='';
