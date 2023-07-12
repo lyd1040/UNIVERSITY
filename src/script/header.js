@@ -72,11 +72,11 @@ function show_hide_header(){
         })
     })
 
-    document.querySelector('main a').addEventListener('focus',()=>{
+    document.querySelector('main a,main button,main input').addEventListener('focus',()=>{
         document.querySelector('.header_contents_right').classList.remove('active');
     })
 
-    gnb.forEach((el,idx) =>{
+    gnb.forEach(el =>{
         el.addEventListener('focus',()=>{
             document.querySelector('.header_contents_right').classList.add('active');
         })
