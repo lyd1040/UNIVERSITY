@@ -68,6 +68,6 @@
         transform: rotate(1800deg) translateX(50px);
     }
     100%{
-        transform: rotate(calc(200deg * var(--i))) translateX(-50px);
+        transform: rotate(calc(200deg * var(--i))) translateX(50px);
     }
 }

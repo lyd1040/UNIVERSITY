@@ -89,6 +89,10 @@
 .container_wrap .section_contents_wrap .container .contents_wrap .contents .paging{
     display: flex;
     justify-content: center;
+}
+.container_wrap .section_contents_wrap .container .contents_wrap .contents .paging .paging_btn_wrap{
+    display: flex;
+    justify-content: center;
     gap: 20px;
 }
 /* 글쓰기 버튼 */

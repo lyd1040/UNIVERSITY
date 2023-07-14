@@ -1,12 +1,14 @@
 window.addEventListener('load',()=>{
+    window.
     loading();
-    admin_check();
+    
 })
 
 async function loading(){
+    await admin_check();
     await img_load();
 }
-function admin_check(){
+async function admin_check(){
     const contents_wrap_a = document.querySelector('.contents_wrap>a');
 
     if(!sessionStorage.getItem('admin-uid')){

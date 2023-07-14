@@ -159,7 +159,7 @@ function textmove(){
     /* 값 입력시 */
     QnA_content_txt.addEventListener('keyup',()=>{
         if(QnA_content_txt.value!=''){
-            QnA_content_txt_txt.classList.add('active');
+            QnA_content_txt.classList.add('active');
         }
     })
 }

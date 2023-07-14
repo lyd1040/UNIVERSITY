@@ -31,8 +31,7 @@ function firebaseauthentication(){
             loding.style.display='none';
             console.log("No user is currently logged in.");
         }
-        loding.style.display='none';
-        history.back();
+        history.go(-1);
         })
         
         .catch(error=> {
