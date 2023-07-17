@@ -118,13 +118,15 @@ async function search(tbody, snapshot){
     
    
     searchBtn.addEventListener('click',()=>{
+        
         arr=[];
         if(select_option.value === '제목'){
             childData.forEach((e,index)=>{
                 for(let x=0; x<tbody.children.length; x++){
                     tbody.children[index].setAttribute('style','display:none');
                 }
-                if(e.QnA_title.search(search_input.value)!= -1){
+                if(e.QnA_title && e.QnA_title.search(search_input.value) !== -1){
+                    console.log('a');
                     tbody.children[index].setAttribute('style','');
                     arr.push(tbody.children[index]);
                 }
@@ -135,7 +137,7 @@ async function search(tbody, snapshot){
                 for(let x=0; x<tbody.children.length; x++){
                     tbody.children[index].setAttribute('style','display:none');
                 }
-                if(e.QnA_content.search(search_input.value)!= -1){
+                if(e.QnA_content && e.QnA_content.search(search_input.value) !== -1){
                     tbody.children[index].setAttribute('style','');
                     arr.push(tbody.children[index]);
                 }
@@ -145,14 +147,14 @@ async function search(tbody, snapshot){
                 for(let x=0; x<tbody.children.length; x++){
                     tbody.children[index].setAttribute('style','display:none');
                 }
-                if(e.writer.search(search_input.value)!= -1){
+                if(e.writer && e.writer.search(search_input.value) !== -1){
                     tbody.children[index].setAttribute('style','');
                     arr.push(tbody.children[index]);
                 }
             })
         }
 
-        searcg_paging(arr);
+        search_paging(arr);
     })
 }
 
@@ -187,7 +189,7 @@ async function click_a(tbody,childSnapshot_arr){
 }
 
 // 검색시 페이징
-function searcg_paging(array) {
+function search_paging(array) {
     const paging_btn_wrap = document.querySelector('.paging_btn_wrap');
     paging_btn_wrap.innerHTML='';
 

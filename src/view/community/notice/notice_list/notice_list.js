@@ -136,7 +136,7 @@ async function search(tbody, snapshot){
                 for(let x=0; x<tbody.children.length; x++){
                     tbody.children[index].setAttribute('style','display:none');
                 }
-                if(e.notice_title.search(search_input.value)!= -1){
+                if(e.notice_title && e.notice_title.search(search_input.value)!== -1){
                     tbody.children[index].setAttribute('style','');
                     arr.push(tbody.children[index]);
                 }
@@ -147,7 +147,7 @@ async function search(tbody, snapshot){
                 for(let x=0; x<tbody.children.length; x++){
                     tbody.children[index].setAttribute('style','display:none');
                 }
-                if(e.notice_content.search(search_input.value)!= -1){
+                if(e.notice_content && e.notice_content.search(search_input.value)!== -1){
                     tbody.children[index].setAttribute('style','');
                     arr.push(tbody.children[index]);
                 }
@@ -249,8 +249,14 @@ async function paging(tbody){
 
     let page_num = (tbody.children.length/10)+1;
 
-    for(let x=0; x<Math.floor(page_num); x++){
-        paging_btn_wrap.innerHTML+='<a href="#none">'+(x + 1)+'</a>';
+    if(page_num>Math.floor(page_num)){
+        for(let x=0; x<Math.floor(page_num); x++){
+            paging_btn_wrap.innerHTML+='<a href="#none">'+(x + 1)+'</a>';
+        }
+    }else{
+        for(let x=0; x<page_num-1; x++){
+            paging_btn_wrap.innerHTML+='<a href="#none">'+(x + 1)+'</a>';
+        }
     }
 
     const paging_btn = document.querySelectorAll('.paging_btn_wrap>a');
