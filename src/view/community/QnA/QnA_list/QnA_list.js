@@ -247,8 +247,14 @@ async function paging(tbody){
 
     let page_num = (tbody.children.length/10)+1;
 
-    for(let x=0; x<Math.floor(page_num); x++){
-        paging_btn_wrap.innerHTML+='<a href="#none">'+(x + 1)+'</a>';
+    if(page_num>Math.floor(page_num)){
+        for(let x=0; x<Math.floor(page_num); x++){
+            paging_btn_wrap.innerHTML+='<a href="#none">'+(x + 1)+'</a>';
+        }
+    }else{
+        for(let x=0; x<page_num-1; x++){
+            paging_btn_wrap.innerHTML+='<a href="#none">'+(x + 1)+'</a>';
+        }
     }
 
     const paging_btn = document.querySelectorAll('.paging_btn_wrap>a');
