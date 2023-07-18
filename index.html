@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/UNIVERSITY/src/assets/images/woosuk.ico">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./UNIVERSITY/src/style/reset.css">
+    <link rel="manifest" href="./UNIVERSITY/src/manifest.json">
+
+    <link rel="stylesheet" href="./UNIVERSITY/src/style/header.css">
+    <link rel="stylesheet" href="./UNIVERSITY/src/style/footer.css">
+    
+    <link rel="stylesheet" href="./UNIVERSITY/src/view/main/index_banner.css">
+    <link rel="stylesheet" href="./UNIVERSITY/src/view/main/main_contents.css">
+    
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script src="./UNIVERSITY/src/script/firebase.js"></script>
+    <title>우석대학교-컴퓨터공학전공</title>
+</head>
+<body>
+    <header class="header" id="header"></header>
+    <main class="main" id="main">
+        <article class="main_wrap">
+            <section class="banner_wrap">
+                <div class="banner">
+                    <div class="banner_left">
+                        <div class="banner_container">
+                            <div class="banner_contents_wrap">
+                                <div class="banner_slide_contents curriculum_bg">
+                                    <div class="banner_contents_intro">
+                                        <p>교과과목 및 학점이수, 자격증에 관련한 정보를 얻을 수 있습니다.</p>
+                                    </div>
+
+                                    <div class="show_detail_page_btn_wrap">
+                                        <a href="./UNIVERSITY/src/view/curriculum/curriculum_composition/curriculum_composition.html" class="show_detail_page_btn">자세히보기</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="banner_contents_name_wrap">
+                                <div class="banner_contents_icon_box">
+                                    <img class="curriculum_img" src="./UNIVERSITY/src/assets/images/main/curriculum_icon.jpg" alt="교육과정">
+                                </div>
+
+                                <p class="banner_contents_name">
+                                    <a href="#none">교육과정</a>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="banner_container">
+                            <div class="banner_contents_wrap">
+                                <div class="banner_slide_contents education_bg">
+                                    <div class="banner_contents_intro">
+                                        <p>컴퓨터공학과의 궁극적인 목표가 무엇인지 어떤 인재 양성을 목표로 수업을 진행하는지 알 수 있습니다.</p>
+                                    </div>
+
+                                    <div class="show_detail_page_btn_wrap">
+                                        <a href="./UNIVERSITY/src/view/specialty/education/education.html" class="show_detail_page_btn">자세히보기</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="banner_contents_name_wrap">
+                                <div class="banner_contents_icon_box">
+                                    <img class="education_img" src="./UNIVERSITY/src/assets/images/main/education_icon.jpg" alt="교육목표">
+                                </div>
+
+                                <p class="banner_contents_name">
+                                    <a href="#none">교육목표</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="banner_center">
+                        <div class="banner_logo_box">
+                            <span>
+                                <img src="./UNIVERSITY/src/assets/images/Woosuk_Logo_outline.png" alt="우석대학교배너로고">
+                            </span>
+
+                            <span>
+                                <img src="./UNIVERSITY/src/assets/images/Woosuk_Logo.png" alt="우석대학교배너로고">
+                            </span>
+                        </div>
+                    </div>
+
+
+
+                    <div class="banner_right">
+                        <div class="banner_container">
+                            <div class="banner_contents_name_wrap">
+                                <div class="banner_contents_icon_box">
+                                    <img class="entrance_info_img" src="./UNIVERSITY/src/assets/images/main/entrance_info_icon.jpg" alt="입학정보" >
+                                </div>
+
+                                <p class="banner_contents_name">
+                                    <a href="#none">입학정보</a>
+                                </p>
+                            </div>
+
+                            <div class="banner_contents_wrap">
+                                <div class="banner_slide_contents entrance_info_bg">
+                                    <div class="banner_contents_intro">
+                                        <p>학교에 입학하려면 어떻게해야하는지 알 수 있습니다.</p>
+                                    </div>
+
+                                    <div class="show_detail_page_btn_wrap">
+                                        <a href="https://jc.woosuk.ac.kr/WoosukEntrance.do" class="show_detail_page_btn">자세히보기</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="banner_container">
+                            <div class="banner_contents_name_wrap">
+                                <div class="banner_contents_icon_box">
+                                    <img class="location_img" src="./UNIVERSITY/src/assets/images/main/location_icon.jpg" alt="오시는길">
+                                </div>
+
+                                <p class="banner_contents_name">
+                                    <a href="#none">오시는길</a>
+                                </p>
+                            </div>
+
+                            <div class="banner_contents_wrap">
+                                <div class="banner_slide_contents location_bg">
+                                    <div class="banner_contents_intro">
+                                        <p>찾아 오시는길을 알려드립니다.</p>
+                                    </div>
+
+                                    <div class="show_detail_page_btn_wrap">
+                                        <a href="https://jc.woosuk.ac.kr/webService.do?menuCode=K16M0426" class="show_detail_page_btn">자세히보기</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="main_contents_container">
+                <span class="main_height_line"></span>
+
+                <section class="specialty_wrap">
+                    <div class="specialty_container">
+                        <h2 class="specialty_name">
+                            전공
+                        </h2>
+
+                        <div class="specialty_list_wrap">
+                            <ul class="select_specialty_intro_wrap">
+                                <li class="select_specialty_img active">
+                                    <img src="./UNIVERSITY/src/assets/images/main/main_contents_first/specialty_intro.jpg" alt="">
+                                </li>
+                                <li class="select_specialty_img">
+                                    <img src="./UNIVERSITY/src/assets/images/main/main_contents_first/education_objective.png" alt="">
+                                </li>
+                                <li class="select_specialty_img">
+                                    <img src="./UNIVERSITY/src/assets/images/main/main_contents_first/job.png" alt="">
+                                </li>
+                                <li class="select_specialty_img">
+                                    <img src="./UNIVERSITY/src/assets/images/main/location.jpg" alt="">
+                                </li>
+                            </ul>
+
+                            <ul class="specialty_list">
+                                <li class="specialty_btn active"><a href="./UNIVERSITY/src/view/specialty/specialty_intro/specialty_intro.html">전공소개</a></li>
+                                <li class="educational_objective_btn"><a href="./UNIVERSITY/src/view/curriculum/curriculum_composition/curriculum_composition.html">교육목표</a></li>
+                                <li class="career_btn"><a href="https://career.woosuk.ac.kr/">졸업후 진로</a></li>
+                                <li class="School_path"><a href="https://jc.woosuk.ac.kr/webService.do?menuCode=K16M0426">찾아오시는 길</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="notice_wrap">
+                    <div class="notice_container">
+                        <h2 class="notice_name">
+                            공지사항
+                        </h2>
+
+                        <div class="notice_list_wrap">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>번호</th>
+                                        <th><a href="#none">제목</a></th>
+                                        <th>작성자</th>
+                                        <th>등록일</th>
+                                        <th>조회수</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- 테이블 목록은 데이터베이스에서 들고오기 -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="select_specialty_intro_btn_wrap">
+                        <a href="./UNIVERSITY/src/view/community/notice/notice_list/notice_list.html">자세히보기</a>
+                    </div>
+                </section>
+
+                <section class="reference_wrap">
+                    <div class="reference_container">
+                        <h2 class="reference_name">
+                            바로가기
+                        </h2>
+
+                        <div class="reference_list_wrap">
+                            <div class="reference_list">
+                                <div class="reference_list_left">
+                                    <div class="refrerence_item">
+                                        <a href="https://portal.woosuk.ac.kr/">우석포털</a>
+                                    </div>
+
+                                    <div class="refrerence_item">
+                                        <a href="https://career.woosuk.ac.kr/">진로취업센터</a>
+                                    </div>
+                                </div>
+
+                                <div class="reference_list_right">
+                                    <div class="refrerence_item">
+                                        <a href="https://jclibrary.woosuk.ac.kr/">중앙도서관</a>
+                                    </div>
+
+                                    <div class="refrerence_item">
+                                        <a href="https://jc.woosuk.ac.kr/webService.do?menuCode=K16M0403">증명 및 고지서</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </section>
+        </article>
+    </main>
+    <footer class="footer" id="footer"></footer>
+
+
+    <script>
+        if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.register('/service-worker.js')
+            .then(function(registration) {
+              console.log('Service Worker registered');
+            })
+            .catch(function(error) {
+              console.log('Service Worker registration failed:', error);
+            });
+        }
+    </script>
+    <script src="./UNIVERSITY/src/script/header_footer_call.js"></script>
+    <script src="./UNIVERSITY/src/view/main/main_notice.js"></script>
+    <script src="./UNIVERSITY/src/view/main/index.js"></script>
+</body>
+</html>
