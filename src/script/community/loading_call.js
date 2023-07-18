@@ -16,6 +16,6 @@ const BannerPrint = async () => {
 };
 
 const getBanner = () => {
-  const response = fetch("/src/view/QnA/loading.html");
+  const response = fetch("/UNIVERSITY/src/view/QnA/loading.html");
   return response.then((res) => res.text());
 };
