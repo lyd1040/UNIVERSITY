@@ -2,6 +2,12 @@
 ## 프로젝트 실행
 - /src/view/main/index.html 이동후 F12
 
+## 사용기술
+- HTML
+- CSS
+- JS
+- Firebase
+
 ## 관리자 ID/PW
 - ID: lyd1040@stu.woosuk.ac.kr
 - PW: abc1234!@
